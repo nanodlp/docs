@@ -2,8 +2,6 @@
 title: "Code"
 description: "How to use code fields on NanoDLP."
 lead: "How to use code fields on NanoDLP."
-date: 2021-03-16T08:43:34+01:00
-lastmod: 2021-03-16T08:43:34+01:00
 draft: false
 images: []
 menu:
@@ -20,7 +18,7 @@ There are many code fields on both NanoDLP's machine settings and resin profile.
 * Bootup - will be run once just after NanoDLP executed
 * Start / Stop / Resume print
 * Before / After layer
-* Dynamic cure time, speed, lifting
+* Dynamic cure time, speed and lifting
 
 ## How it works?
 
