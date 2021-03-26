@@ -19,7 +19,7 @@ On boards like Raspberry Pi, the process of slicing large STL files could take u
 
 ## How to use remote slicing?
 
-There are three ways to use Remote Slicing
+There are three ways to use Remote Slicing:
 
 ### Automatic
 
@@ -28,6 +28,8 @@ If you have installed NanoDLP on your Personal Computer, try to connect to NanoD
 ### Manual setup
 
 Navigate through **System > Machine Settings > Slicing > Remote slicing** and enter the IP alongside the Port number.
+
+IP could be private (local) network IP or public IP / port forwarding, loopback IP (127.0.0.1 / 0.0.0.0) should not used. Default port is usually 80 for Raspberry and 8080 for other devices. Checkout [this guide](https://www.tp-link.com/us/support/faq/838/#windows%2010) if you are not sure how to find your IP address.
 
 <img src="https://www.nanodlp.com/help/remote-slicing.png" style="width:100%">
 
