@@ -46,3 +46,7 @@ NanoSupport has embedded NanoDLP inside which detect your printers and resin pro
 5. NanoDLP on Windows start processing.
 6. NanoDLP on Raspberry Pi get status update from Windows version. And wait until slicing get completed.
 7. NanoDLP on Raspberry Pi fetch prepared data.
+
+## Troubleshoot
+
+You need to add inbound connection exception on your firewall to make NanoDLP on your PC/Mac accessible, usually your OS will ask for permission upon running NanoDLP but if it does not, you need to do it manually.
