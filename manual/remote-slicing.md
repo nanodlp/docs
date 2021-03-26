@@ -13,11 +13,11 @@ weight: 1100
 toc: true
 ---
 
-## What is/are the reason(s) to use it?
+## What is/are the reason(s) to use remote slicing?
 
 On boards like Raspberry Pi, the process of slicing large STL files could take up to 30 minutes, whether on a normal Personal Computer, it takes about 2 to 3 minutes. By using Remote Slicing your waiting time decreases significantly.
 
-## How to use it?
+## How to use remote slicing?
 
 There are three ways to use Remote Slicing
 
