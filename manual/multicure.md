@@ -26,4 +26,3 @@ Whole print will takes as much as time required for the single plate using highe
 On the plate add page, there are a button called *advanced*, click and enter whatever cure times you need.
 
 Base cure time for the current profile, also will be added to cure times.
-
