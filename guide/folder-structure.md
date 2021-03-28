@@ -7,7 +7,6 @@ images: []
 menu: 
   docs:
     parent: "guide"
-weight: 1000
 toc: true
 ---
 
@@ -44,11 +43,21 @@ Below you could find the basic folder structure after installation on Raspberry 
 └── templates
 ```
 
+
 ## Folders 
 
 ### db/
 
 This is the most important folder as it contains many json files which keep all of your NanoDLP configurations.
+
+```
+db/buttons.json     # Custom buttons
+db/calibration.json # Calibration plate details  
+db/machine.json     # Machine settings (setup)
+db/plates.json      # Uploaded plates details
+db/profiles.json    # Resin profile settings
+db/stat.json        # Your printer statistics
+```
 
 ### public/
 

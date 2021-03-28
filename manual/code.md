@@ -7,7 +7,6 @@ images: []
 menu:
   docs:
     parent: "manual"
-weight: 200
 toc: true
 ---
 

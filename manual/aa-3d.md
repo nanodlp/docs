@@ -7,7 +7,6 @@ images: []
 menu:
   docs:
     parent: "manual"
-weight: 1000
 toc: true
 ---
 <img src="https://www.nanodlp.com/help/3d-aa.jpg" width="100%" alt="3D SLA Anti Aliasing">
