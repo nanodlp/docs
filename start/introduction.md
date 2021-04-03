@@ -35,7 +35,7 @@ The controller board support different hardwares needed in order to operate 3D p
 
 ## This document
 
-This document arranged in three different sections.
+NanoDLP documentation arranged in three different sections.
 
 ### Get started
 

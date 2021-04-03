@@ -160,6 +160,9 @@ Change current layer `eg. [[LayerChange 22.1]]`
 		*BufferSize* indicates how many command should be sent out before receiving OK responses.		
 		`eg. [[ResponseCheck 1 3]]`
 
+**[[ResponseCheck]]**  
+  Reset OK response counter to zero
+
 **[[Pause]]**  
   Pause the printer, requires resume from dashboard to continue.
 
@@ -270,6 +273,7 @@ G1 Z1.1
 If the firmware you are using on the controller board send ok response after execution of each command, you can use this command to synchronize movements.
 
 `
+[[ResponseCheck]]
 G1 X1.1
 [[ResponseCheck 1 1]]
 `		
