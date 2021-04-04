@@ -155,7 +155,7 @@ Change current layer `eg. [[LayerChange 22.1]]`
   Set n as current move counter
 
 **[[ResponseCheck ExpectedOK BufferSize]]**  
-  Helps syncronize fast moving SLS and laser SLA systems. It limits how many gcode will be send to RAMPS before waiting for response from RAMPS. It requires ok response from RAMPS after commands get completed and not after receiving them.
+  Helps synchronize fast moving SLS and laser SLA systems. It limits how many gcode will be send to RAMPS before waiting for response from RAMPS. It requires ok response from RAMPS after commands get completed and not after receiving them.
 		*ExpectedOK* integer indicates how many OK will be received from RAMPS board.
 		*BufferSize* indicates how many command should be sent out before receiving OK responses.		
 		`eg. [[ResponseCheck 1 3]]`
