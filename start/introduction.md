@@ -31,7 +31,7 @@ It is standalone all-in-one controller and host solution to slice and print 3D o
 
 ### NanoDLP official controller board
 
-The controller board support different hardwares needed in order to operate 3D printer.
+The [NanoDLP controller board](https://www.nanodlp.com/nanodlp-controller-board/) support different hardwares needed in order to operate 3D printer.
 
 ## This document
 
