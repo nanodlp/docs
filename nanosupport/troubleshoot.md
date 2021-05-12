@@ -1,4 +1,5 @@
 ---
+weight: 4
 title: "Troubleshoot"
 description: "Troubleshooting application."
 lead: ""

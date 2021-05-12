@@ -1,4 +1,5 @@
 ---
+weight: 3
 title: "Slicing"
 description: "Slicing 3D object and get prepared to print."
 lead: ""
