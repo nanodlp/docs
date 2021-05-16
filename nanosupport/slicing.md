@@ -29,7 +29,7 @@ Resin profiles for the connected printer are fetched and listed. Slicing would b
 
 ## Slice
 
-*Slice* button sends the whole scene to the connected printer to be sliced with the selected resin profile. The output slices/layers can be previewed by the next tool.
+*Slice* button sends the whole 3D scene to the connected printer to be sliced with the selected resin profile. The output slices/layers can be previewed by the next tool.
 
 ## Slice Preview
 
