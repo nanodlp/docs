@@ -67,7 +67,7 @@ Auto packing works in `XY` plane by setting a space between bounding boxes and a
 
 ## Hollowing Parameters
 
-3D items can be hollowed by the some parameters.
+3D items can be hollowed by the following parameters.
 
 ### Thickness
 
