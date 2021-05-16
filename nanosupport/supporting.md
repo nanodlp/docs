@@ -71,7 +71,7 @@ If *Auto Support* checkbox is checked, additional tools are available to get aut
 
 Cylinder-shaped support points can be deleted by click.
 
-When *Auto Support* checkbo is checked, *Generate* button would create supports for both:
+When *Auto Support* checkbox is checked, *Generate* button would create supports for both:
 
 1. Cone-shaped manually-clicked placeholders, if any
 1. Cylinder-shaped automatically-detected points, if any
