@@ -4,18 +4,13 @@ description: "How to resolve elephant foot issue on SLA 3D printers."
 lead: ""
 draft: false
 images: []
-menu:
-  docs:
-    parent: "manual"
 toc: true
 ---
-
 Elephant foot is enlarged area of print on burn-in section of the print, mostly caused by higher cure-time on the burn-in layers.
 
-To resolve it many people put support below objects or modify early section of the object on 3D editor in order to continue print object directly on build platform. 
+To resolve it many people put support below objects or modify early section of the object on 3D editor in order to continue print object directly on build platform.
 
 To resolve it NanoDLP provides many features, on this guide we focus on only the most recent one which is superior to the available solutions.
-
 
 ## Middle exposure
 

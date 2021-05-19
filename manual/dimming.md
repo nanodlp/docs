@@ -4,12 +4,8 @@ description: "Pixel Dimming ensure the highest print quality along with an easy 
 lead: ""
 draft: false
 images: []
-menu:
-  docs:
-    parent: "manual"
 toc: true
 ---
-
 Pixel Dimming ensure the highest print quality along with an easy setup experience. This feature would have following effects by dimming the pixels:
 
 * Prevents over-cure
@@ -26,7 +22,6 @@ particular layer, the more of a runaway cure you will experience. That is why, t
 despite all attempts to prevent it through adjusting cure times. But by enabling Pixel Dimming, you can
 fix it quite easily.
 
-
 ## How to use it?
 
 It is available on resin profile
@@ -35,29 +30,22 @@ It is available on resin profile
 
 ### FEP
 
-* Dimming Type  
+* Dimming Type
   Checkerboard
-
-* Dimming Amount  
+* Dimming Amount
   20%
-  
-* Wall Around Dimmed Area in Pixels   
-  3 - Depends on x/y resolution   
-
-* Skip Layers   
-  40 - To have stronger support structure, you can turn off dimming for some number of layers   
-
+* Wall Around Dimmed Area in Pixels
+  3 - Depends on x/y resolution
+* Skip Layers
+  40 - To have stronger support structure, you can turn off dimming for some number of layers
 
 ### PDMS
 
-* Dimming Type   
-	   Checkerboard   
-
-* Dimming Amount   
-	   35%   
-
-* Wall Around Dimmed Area in Pixels   
-	   3 - Depends on x/y resolution   
-       
-* Skip Layers   
-	   5   
+* Dimming Type
+  Checkerboard
+* Dimming Amount
+  35%
+* Wall Around Dimmed Area in Pixels
+  3 - Depends on x/y resolution
+* Skip Layers
+  5

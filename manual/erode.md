@@ -4,9 +4,6 @@ description: "Reducing (erode) or expanding (dilate) the volume of an object by 
 lead: "Reducing (erode) or expanding (dilate) the volume of an object by scaling the coordinates."
 draft: false
 images: []
-menu:
-  docs:
-    parent: "manual"
 toc: true
 ---
 

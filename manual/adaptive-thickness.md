@@ -4,12 +4,8 @@ description: "Adaptive layer thickness enable slicer to analysis whole object an
 lead: "Adaptive layer thickness enable slicer to analysis whole object and slice it with different thicknesses depend on details on each level."
 draft: false
 images: []
-menu:
-  docs:
-    parent: "manual"
 toc: true
 ---
-
 ## Why using it?
 
 Using *adaptive layer thickness* use can increase print quality without sacrificing print time.

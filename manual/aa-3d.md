@@ -4,10 +4,7 @@ description: "It is a technique to smooth those lines which look like the stair 
 lead: "It is a technique to smooth those lines which look like the stair steps. Applying this effect will attenuate the lineament of jaggies."
 draft: false
 images: []
-menu:
-  docs:
-    parent: "manual"
-toc: true
+toc: false
 ---
 <img src="https://www.nanodlp.com/help/3d-aa.jpg" width="100%" alt="3D SLA Anti Aliasing">
 

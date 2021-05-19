@@ -4,12 +4,8 @@ description: "You can correct the barrel factor which is caused by projector len
 lead: "You can correct the barrel factor which is caused by projector lens."
 draft: false
 images: []
-menu:
-  docs:
-    parent: "manual"
 toc: true
 ---
-
 ## Why using barrel correction?
 
 Projector lens cause [distortions](https://en.wikipedia.org/wiki/Distortion_(optics)) which may cause large object to deform. The main distortion caused by lenses called barrel distortion.
