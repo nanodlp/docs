@@ -6,6 +6,7 @@ draft: false
 images: []
 toc: true
 ---
+<img src="https://www.nanodlp.com/help/erode-2.png">
 
 ## Why using erode or dilate?
 
