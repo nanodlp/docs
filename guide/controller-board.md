@@ -31,13 +31,13 @@ Based on table below you need to adjust jumpers.
 | GND    | VCC_IO | 64   |
 | VCC_IO | VCC_IO | 16   |
 
-### NanoDLP settings
+### Change Micro-stepping
 
-On the NanoDLP machine settings section (boot-up and start gcode inputs), you can find ``M92 Z3200`` which indicate micro-stepping on Marlin. You need to update value accordingly.
+On the NanoDLP machine settings section (boot-up and start gcode inputs), you can find ``M92 Z3200`` which indicate micro-stepping and your axis pitch on Marlin. You need to update value accordingly.
 
 ## End switch / End limit
 
-Default NanoDLP controller board support NPN and not PNP, using PNP require firmware change.
+Default NanoDLP controller board support NPN and not PNP, using PNP require firmware change to do so you need to change Marlin config file before compiling that.
 
 ## Z-Axis height
 
