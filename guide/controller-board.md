@@ -31,7 +31,7 @@ Based on table below you need to adjust jumpers.
 | GND    | VCC_IO | 64   |
 | VCC_IO | VCC_IO | 16   |
 
-### Change Micro-stepping
+### NanoDLP settings
 
 On the NanoDLP machine settings section (boot-up and start gcode inputs), you can find ``M92 Z3200`` which indicate micro-stepping and your axis pitch on Marlin. You need to update value accordingly.
 
@@ -43,3 +43,6 @@ Default NanoDLP controller board support NPN and not PNP, using PNP require firm
 
 Early NanoDLP controller board firmware limit Z-Axis height to 200mm on more recent one limit is 500mm. Modifying this limit require firmware flash/change.
 
+## NanoDLP Shield 
+
+These are unofficial controller boards based on early NanoDLP hardware design, use of these board are not suggested due to short comes. 
