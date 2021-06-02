@@ -1,6 +1,6 @@
 ---
 weight: 4
-title: "Troubleshoot"
+title: "Troubleshoot NanoSupport"
 description: "Troubleshooting application."
 lead: ""
 draft: false
