@@ -45,4 +45,4 @@ Early NanoDLP controller board firmware limit Z-Axis height to 200mm on more rec
 
 ## NanoDLP Shield 
 
-These are unofficial controller boards based on early NanoDLP hardware design, use of these board are not suggested due to short comes. 
+These are unofficial controller boards based on early NanoDLP hardware design, use of these board are not suggested due to weaknesses. 

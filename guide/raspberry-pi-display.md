@@ -4,12 +4,8 @@ description: ""
 lead: ""
 draft: false
 images: []
-menu: 
-  docs:
-    parent: "guide"
 toc: true
 ---
-
 ## Changing display settings
 
 Editing display settings involve editing `/boot/config.txt` file but on recent version of NanoDLP it become much easier as you can do it by going to: 
