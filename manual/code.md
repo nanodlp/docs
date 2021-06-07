@@ -14,10 +14,19 @@ toc: true
 
 There are many code fields on both NanoDLP's machine settings and resin profile. Some of the most important ones are:
 
-* Bootup - will be run once just after NanoDLP executed
+* Boot-up - will be run once just after NanoDLP executed
 * Start / Stop / Resume print
 * Before / After layer
 * Dynamic cure time, speed and lifting
+* Shutdown - run before shutdown button presses
+* Shutter on / off - run if shutter enabled, consider possible gcodes will be send async, so it may cause issue for synchronization mechanisms
+
+There are other fields that only support JS, variable and math functionalities:
+
+* Dynamic lift
+* Dynamic speed
+* Dynamic cure time
+* Dynamic wait
 
 ## How it works?
 
@@ -313,6 +322,11 @@ Resume Print
 
 ```
 G90 ; Put positioning in absolute mode
-G92 Z[[CurrentPosition]] Y0 X0 ; System crashed so we need to recover current position from nanodlp and set it on RAMP
+G92 Z[[CurrentPosition]] Y0 X0 ; System crashed so we need to recover current position from NanoDLP and set it on RAMP
 G1 Z[[LayerPosition]] ; Move to layer position
 ```
+
+## GCODE
+
+Gcode is a language being used by major RAMPS firmwares such as Marlin and GRBL. It helps do many different hardware actions.
+For more information on main commands and compatibility check [RepRap gcode page](https://reprap.org/wiki/G-code).
