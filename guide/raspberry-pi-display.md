@@ -55,5 +55,10 @@ Probably display is monochrome but you setup it on NanoDLP as RGB display or rev
 
 It means your display driver specifications are not detected correctly with Raspberry Pi [EDID](https://en.wikipedia.org/wiki/Extended_Display_Identification_Data). 
 
-It is bit challenge to come up with correct values without display driver manufacturer help. Try correct HDMI related options on config.txt. Sometimes Pi4 and Pi3 configs could differ which makes things more difficult.
+Usually a display driver manufacturer help needed to come up with correct configuration. You should contact the display seller first, if it does not help on the [online Raspberry Pi display configuration sheet](https://docs.google.com/spreadsheets/d/1hSdkwEbtTrVbtTAgvv-0QcyMbztVJvU7GvOmZ8gp5Vk/edit#gid=0) you can find some configuration files for popular displays.
 
+Consider below points during your journey to come up with correct configurations.
+
+* Sometimes Pi 4 and Pi 3 configs could differ
+* Some items may seems unrelated but could affect HDMI output
+* Pi 4 supports two displays, you can assign separate config to each port separately. Specially useful to save memory to prevent memory allocation to empty port.
