@@ -19,4 +19,4 @@ Anti-aliasing available on many modern slicer, NanoDLP apply AA as default on an
 
 ### Anti-aliasing Threshold
 
-Some resins does not cure well below specific light intensity. Anti-aliasing generate different shades of grey which lower intensity cause bleeding effect on print surface. You can define minimum % of light intensity required for curing specific resin.
+Some resins does not cure well below specific light intensity. Anti-aliasing generate different shades of grey which lower intensity may cause bleeding effect on prints surface. You can define minimum % of light intensity required for curing specific resin.
