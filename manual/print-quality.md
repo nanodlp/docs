@@ -16,3 +16,7 @@ toc: true
 ## Anti-aliasing
 
 Anti-aliasing available on many modern slicer, NanoDLP apply AA as default on any 3D object. NanoDLP AA is not adjustable (only could be disabled) and apply limited amount of AA in order to not cause issue with majority of resin types.
+
+### Anti-aliasing Threshold
+
+Some resins does not cure well below specific light intensity. Anti-aliasing generate different shades of grey which lower intensity cause bleeding effect on print surface. You can define minimum % of light intensity required for curing specific resin.
