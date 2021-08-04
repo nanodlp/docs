@@ -25,4 +25,6 @@ To correct it:
 
 * Make sure there is no insufficient or power fluctuation
 * Make sure cable between RAMPS and Pi is fine
-  
+
+Another reason that may cause such issue is wrong configuration. When shutter code being used as it being processed in parallel with other code boxes. It could make NanoDLP receives commands in wrong order.
+It is much better to move any gcode inside shutter inputs to before and after layer gcode boxes.
