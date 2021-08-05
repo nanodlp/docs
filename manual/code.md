@@ -330,3 +330,7 @@ G1 Z[[LayerPosition]] ; Move to layer position
 
 Gcode is a language being used by major RAMPS firmwares such as Marlin and GRBL. It helps do many different hardware actions.
 For more information on main commands and compatibility check [RepRap gcode page](https://reprap.org/wiki/G-code).
+
+## Async Codes
+
+Shutter codes being processed in parallel, it is very important to consider synchronization mechanism before using async gcode inputs. As it may cause issue on synchronization as it does not guaranteed, when these codes being reached RAMPS board, which may cause printer stalls. It is better to move shutter open/close codes to before/after layer code inputs on profile level.
