@@ -43,6 +43,10 @@ Default NanoDLP controller board support NPN and not PNP, using PNP require firm
 
 Early NanoDLP controller board firmware limit Z-Axis height to 200mm on more recent one limit is 500mm. Modifying this limit require firmware flash/change.
 
+## Marlin firmware
+
+You can use [Marlin source code ready to use with NanoDLP controller board](https://github.com/nanodlp/Marlin/tree/nanodlp) to customize firmware on your controller board.
+
 ## NanoDLP Shield 
 
 These are unofficial controller boards based on early NanoDLP hardware design, use of these board are not suggested due to weaknesses. 
