@@ -131,3 +131,7 @@ Section "Monitor"
 	Option "PreferredMode" "Mode 11"
 EndSection
 ```
+
+## Additional Resources
+
+If your display does work strangely, the issue probably caused by wrong HDMI timing. Check out below post on how to [get correct timing on Raspberry Pi](https://www.raspberrypi.org/forums/viewtopic.php?t=224229&fbclid=IwAR1RERZ60jAkD_Za0kjIn3Rfu5C6Jb03SGnqTIXbhF47ZqB0MhGemo5AYag).
