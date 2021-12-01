@@ -39,6 +39,8 @@ On the NanoDLP machine settings section (boot-up and start gcode inputs), you ca
 
 Default NanoDLP controller board support NPN and not PNP, using PNP require firmware change to do so you need to change Marlin config file before compiling that.
 
+To understand end switch type try ```M119``` command on NanoDLP terminal, if the sensor is open and z_min triggered your end switch is PNP.
+
 ## Z-Axis height
 
 Early NanoDLP controller board firmware limit Z-Axis height to 200mm on more recent one limit is 500mm. Modifying this limit require firmware flash/change.
