@@ -74,7 +74,7 @@ There are large number of settings (100+) here but majority of them already expo
 
 ### Resin profile settings
 
-Settings here are going to be deprecated.
+There are some hidden options on profile level.
 
 ```json
 [
@@ -82,9 +82,11 @@ Settings here are going to be deprecated.
 		"ProfileID": 1,
 		"Title": "Generic Resin + Adaptive Layer Thickness",
 		"Desc": "This profile using dynamic cure time to support adaptive layer thickness, pre-configured for NanoDLP controller board.",
-		"LowQualityCureTime": 0,        /* Low quality layer cure time */
-		"LowQualitySkipPerLayer": 0,    /* How many layers to skip */
-		"XYResPerc": 0,                 /* Change on X and Y resolution as percentage */
+		"ShutterOpenGcode": "",        	/* Override shutter open code on machine level */
+		"ShutterCloseGcode": "",		/* Override shutter close code on machine level */
+		"LowQualityCureTime": 0,        /* Low quality layer cure time - Deprecated */
+		"LowQualitySkipPerLayer": 0,    /* How many layers to skip - Deprecated */
+		"XYResPerc": 0,                 /* Change on X and Y resolution as percentage - Deprecated */
 	}
 ]
 ```
