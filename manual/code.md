@@ -137,9 +137,9 @@ Change current layer `eg. [[LayerChange 22.1]]`
 
 **[[LayerSkip Value]]**  
   For the positive values it skips a layer `eg. [[LayerSkip 1]]`
-		It skips any remaining gcode and layer tasks, and starts the next layer.
-		The more advanced use case example: `[[LayerSkip ((100>[[TotalSolidArea]])*(1-[[SkippedLayers]])*([[LayerNumber]]>3))]]`
-		The gcode above would cause layers to be skipped after the first 3 layers if a layer before the current one has not been skipped and the difference between the previous and the current layer is less than 100 pixels.
+	It skips any remaining gcode and layer tasks, and starts the next layer.
+	The more advanced use case example: `[[LayerSkip ((100>[[TotalSolidArea]])*(1-[[SkippedLayers]])*([[LayerNumber]]>3))]]`
+	The gcode above would cause layers to be skipped after the first 3 layers if a layer before the current one has not been skipped and the difference between the previous and the current layer is less than 100 pixels.
 	
 
 **[[Delay Seconds]]**  
@@ -147,7 +147,7 @@ Change current layer `eg. [[LayerChange 22.1]]`
 
 **[[Split]]**  
 	Split gcode into chunks and process, each part will be processed after complete processing of the previous one. For example if a single chunk contain [[Delay]] keyword, it will delay processing of the next chunks.
-		It is not functional on dynamic calculation fields such as dynamic speed.
+	It is not functional on dynamic calculation fields such as dynamic speed.
 
 ### Synchronization
 
@@ -165,9 +165,9 @@ Change current layer `eg. [[LayerChange 22.1]]`
 
 **[[ResponseCheck ExpectedOK BufferSize]]**  
   Helps synchronize fast moving SLS and laser SLA systems. It limits how many gcode will be send to RAMPS before waiting for response from RAMPS. It requires ok response from RAMPS after commands get completed and not after receiving them.
-		*ExpectedOK* integer indicates how many OK will be received from RAMPS board.
-		*BufferSize* indicates how many command should be sent out before receiving OK responses.		
-		`eg. [[ResponseCheck 1 3]]`
+	*ExpectedOK* integer indicates how many OK will be received from RAMPS board.
+	*BufferSize* indicates how many command should be sent out before receiving OK responses.	
+	`eg. [[ResponseCheck 1 3]]`
 
 **[[ResponseCheck]]**  
   Reset OK response counter to zero
@@ -235,6 +235,295 @@ G1 Z22.25 F100
 M117
 ```
 
+### Accessing NanoDLP context
+
+{{< alert icon="👉" text="Global context discussed here may change without notice. Use with cautious." >}}
+
+You are able to access NanoDLP internal variables using Javascript functionality.
+
+For example:
+```js
+[JS]
+var nano = nanodlpContext();
+output = nano["Config"]["Name"];
+[/JS]
+```
+
+Result:
+
+```
+Your printer name
+```
+
+Full list of available variables on the context
+
+```go
+Config
+    Name                string
+    Lang                string
+    Email               string
+    PrinterID           int
+    Port                int
+    PrinterType         uint8
+    ZAxisPin            uint8
+    DirectionPin        uint8
+    ReverseDirectionPin uint8
+    LimitPin            uint8
+    LimitPinB           uint8
+    LimitPinMode        uint8
+    LimitPinReset       uint8
+    WaitPin             uint8
+    EnablePin           uint8
+    EnablePinState      uint8
+    EnablePinMode       uint8
+    FaultPin            uint8
+    FaultPinState       uint8
+    ShutterPin          uint8
+    ShutterType         uint8
+    ShutterMode         uint8
+    ShutterOpen         uint
+    ShutterClose        uint
+    ShutterOpenGcode    string
+    ShutterCloseGcode   string
+    ShutterSignalLength uint
+    FanOnGcode          string
+    FanOffGcode         string
+    MaxSpeed            int64
+    MinSpeed            int64
+    StartupSpeed        int64
+    StopPositionMm      float64
+    ResinDistanceMm     float64
+    ZAxisHeight         int32
+    MotorDegree         float64
+    MicroStep           float64
+    LeadscrewPitch      float64
+    LCDType             uint8
+    LCDAdress           uint8
+    LCDPath             string
+    ShieldType          uint8
+    ShieldEncoding      uint8
+    ShieldI2CAddress    uint8
+    ShieldUSBAddress    string
+    ShieldSpeed         int
+    ShieldBootup        string
+    ShieldShutdown      string
+    ShieldStart         string
+    ShieldResume        string
+    ShieldPause         string
+    ShieldUnpause       string
+    ShieldFinish        string
+    ShieldForceStop     string
+    ShieldAxisMode      uint8 // 0 Zero bottom 1 top bottom
+    ShieldPositioning   uint8 // 0 Relative  1 Absolute
+    ManualMoveGcode     string
+    TopGcode            string
+    BottomGcode         string
+    CalibrationGcode    string
+    CameraFrequency     int8
+    CameraStore         int8
+    CameraCommand       string
+    ShutdownPin         uint8
+    ProjectorWidth      int
+    ProjectorHeight     int
+    ProjectorType       uint8
+    ProjectorPowerCycle uint8
+    ProjectorSpeed      int
+    ProjectorAddress    string
+    ProjectorOn         string
+    ProjectorOff        string
+    ProjectorLampQuery  string
+    ProjectorLampEffect float32
+    ProjectorOnSyscall  string
+    ProjectorOffSyscall string
+    ProjectorWarmup     float64
+    DisplayController   uint8
+    ImageMirror         uint8
+    LightOutputFormula  string
+    BarrelFactor        float64
+    BarrelX             int
+    BarrelY             int
+    FBPath              string
+    XYRes               float64
+    YRes                float64
+    Mute                uint8
+    DisplayID           uint32
+    DefaultProfile      int
+    SpeedFormula        string
+    RemoteSlicer        string
+    PressureType        uint8
+    PressureAddress     string
+    PressureSpeed       int
+    PressureRegex       string
+    PressureDebug       bool
+    ScaleClockPin       uint8
+    ScaleDataPin        uint8
+    OpenScaleAddress    string
+    Theme               uint8
+    CustomValues        map[string]string
+    AutoSlice           uint8
+    PreviewGenerate     uint8
+    PreviewWidth        int
+    PreviewHeight       int
+    USBDisplayAddress   string
+
+Layer
+	PlateID        int
+	LayerID        int
+	ShieldAxisMode uint8
+
+Plate
+	PlateID               int
+	ProfileID             int
+	CreatedDate           time.Time
+	StopLayers            string
+	Path                  string
+	LowQualityLayerNumber int
+	AutoCenter            uint8
+	Updated               uint64
+	LastPrint             uint64
+	PrintTime             int64
+	PrintEst              int64
+	ImageRotate           uint8
+	MaskEffect            float32
+	XRes                  float64
+	YRes                  float64
+	ZRes                  float64
+	MultiCure             string
+	MultiThickness        string
+	CureTimes             []float64
+	DynamicThickness      []float32
+	Offset                float32
+	OverHangs             []int
+	Risky                 bool
+	IsFaulty              bool
+	Repaired              bool
+	FaultyLayers          []int
+	Corrupted             bool             `form:"-"`
+	TotalSolidArea        float32          `form:"-"`
+	FillAreas             []area.LayerInfo `json:"-" form:"-"`
+	BlackoutData          string           `form:"-"`
+	LayersCount           int              `form:"-"`
+	Rectangles            RectangleStruct  `json:"-" form:"-"`
+	Processed             bool             `form:"-"`
+	CustomDir             string           `json:"-" form:"-"`
+	Status                uint8            `json:"-" form:"-"`
+	Feedback              bool
+	PrintID               int64
+	MC                    format.MultiCure
+	boundary.Boundaries
+
+Profile
+	ResinID                int
+	ProfileID              int
+	Title                  string
+	Desc                   string
+	ResinPrice             float32
+	ZStepWait              int64
+	SlowSectionHeight      float32
+	SlowSectionStepWait    int64
+	TopWait                float32
+	WaitHeight             float32
+	CureTime               float32
+	DynamicWaitAfterLift   string
+	DynamicCureTime        string
+	DynamicSpeed           string
+	DynamicLift            string
+	Depth                  float32
+	WaitBeforePrint        float32
+	WaitAfterPrint         float32
+	JumpHeight             float32
+	JumpPerLayer           int
+	SupportTopWait         float32
+	SupportWaitHeight      float32
+	SupportLayerNumber     int
+	SupportCureTime        float32
+	SupportDepth           float32
+	SupportWaitBeforePrint float32
+	SupportWaitAfterPrint  float32
+	AdaptSlicing           uint8
+	AdaptSlicingMin        float32
+	AdaptSlicingMax        float32
+	YRes                   float64
+	ZResPerc               float32
+	SupportOffset          float32
+	Offset                 float32
+	ShutterOpenGcode       string
+	ShutterCloseGcode      string
+	FillColor              string
+	BlankColor             string
+	ShieldBeforeLayer      string
+	ShieldAfterLayer       string
+	PixelDiming            uint8
+	DimAmount              float32
+	DimWall                int
+	DimSkip                uint
+	TransitionalLayer      uint8
+	ElephantMidExposure    uint8
+	ElephantType           uint8
+	ElephantAmount         float32
+	ElephantWall           int
+	ElephantLayers         int
+	HatchingType           uint8
+	HatchingWall           int
+	HatchingGap            int
+	HatchingOuterWall      int
+	HatchingTopCap         int
+	HatchingBottomCap      int
+	AntiAlias              uint8
+	AntiAlias3D            uint8
+	AntiAlias3DDistance    float32
+	AntiAlias3DMin         uint8
+	AntiAliasThreshold     float32
+	MultiCureGap           float32
+	ImageRotate            uint8
+	IgnoreMask             uint8
+	ShieldStart            string
+	ShieldResume           string
+	ShieldFinish           string
+	LaserCode              string
+	Updated                uint64   
+
+Status
+	PlateID         int
+	SlicingPlateID  int
+	Path            string
+	LayerID         int
+	ResumeID        int
+	LayerSinceStart int
+	LayersCount     int
+	PlateHeight     float32
+	CurrentHeight   int32
+	LayerTime       int64
+	PrevLayerTime   int64
+	LayerStartTime  int64
+	Camera          int8
+	LampHours       float32
+	Panicked        bool `json:"-"`
+	PanicRow        int
+	Serial          string `json:"-"`
+	ip              string
+	State           Mode   `json:"-"`
+	Build           string `json:"-"`
+	Wifi            string `json:"-"`
+	Version         int    `json:"-"`
+	StartAfterSlice int    `json:"-"`
+	Covered         bool
+	Halted          bool `json:"-"`
+	ForceStop       bool `json:"-"`
+	Printing        bool `json:"-"`
+	Paused          bool `json:"-"`
+	AutoShutdown    bool `json:"-"`
+	Cast            bool `json:"-"`
+
+Stat
+    TotalCureTime       float32
+	TotalPrintTime      float32
+	TotalLayers         int64
+	TotalPlatePrints    int
+	TotalCompletePrints int
+
+```
+
 ## Dynamic fields
 
 * Using dynamic fields, NanoDLP will ignore any static value.
@@ -285,9 +574,9 @@ If the firmware you are using on the controller board send ok response after exe
 [[ResponseCheck]]
 G1 X1.1
 [[ResponseCheck 1 1]]
-`		
+`	
 
-### Crash Recovery
+### Crash recovery
 
 Using the right settings is the key to crash recovery and to benefit from nanoDLP in full potential. A way to do this is to delegate positioning to nanoDLP.
 
@@ -328,9 +617,9 @@ G1 Z[[LayerPosition]] ; Move to layer position
 
 ## GCODE
 
-Gcode is a language being used by major RAMPS firmwares such as Marlin and GRBL. It helps do many different hardware actions.
+Gcode is a language being used by major controller board firmwares such as Marlin and GRBL. It helps do many different hardware actions.
 For more information on main commands and compatibility check [RepRap gcode page](https://reprap.org/wiki/G-code).
 
-## Async Codes
+## Async codes
 
-Shutter codes being processed in parallel, it is very important to consider synchronization mechanism before using async gcode inputs. As it may cause issue on synchronization as it does not guaranteed, when these codes being reached RAMPS board, which may cause printer stalls. It is better to move shutter open/close codes to before/after layer code inputs on profile level.
+Shutter codes being processed in parallel, it is very important to consider synchronization mechanism before using async gcode inputs. As it may cause issue on synchronization as it does not guaranteed, when these codes being reached controller board, which may cause printer stalls. It is better to move shutter open/close codes to before/after layer code inputs on profile level.
