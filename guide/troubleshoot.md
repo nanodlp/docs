@@ -28,3 +28,9 @@ To correct it:
 
 Another reason that may cause such issue is wrong configuration. When shutter code being used as it being processed in parallel with other code boxes. It could make NanoDLP receives commands in wrong order.
 It is much better to move any gcode inside shutter inputs to before and after layer gcode boxes.
+
+### Lines and artifacts on printed objects
+
+May caused by bad synchronization. Synchronization keyword get passed earlier because of wrong command usage or bad wiring on shield <=> driver board.
+
+Also having shutter gcode without wrong synchronization method may cause similar issues.

@@ -149,19 +149,39 @@ Change current layer `eg. [[LayerChange 22.1]]`
 	Split gcode into chunks and process, each part will be processed after complete processing of the previous one. For example if a single chunk contain [[Delay]] keyword, it will delay processing of the next chunks.
 	It is not functional on dynamic calculation fields such as dynamic speed.
 
+**[[Pause]]**  
+  Pause the printer, requires resume from dashboard to continue.
+
 ### Synchronization
+NanoDLP does not have knowledge of how much time it would take to finish a movement on shield. There are a couple of ways to solve this problem.
 
-**[[WaitForDoneMessage]]**  
-  Wait for *Z_move_comp* message from RAMPS or similar boards
+Checkout [Troubleshoot Issues]({{< ref "troubleshoot" >}}) for more delays on possible problems could be caused by wrong synchronization.
 
-**[[WaitForDoneMessage n]]**  
-  Wait for *Z_move_comp* message from RAMPS or wait for n second. Which happens earlier
+#### Using [[MoveWait n]] and [[MoveCounterSet n]] keyword
+By using marlin or any other NanoDLP compatible firmware you can synchronize movements. After this keyword nanoDLP will wait for *Z_move_comp* response from the shield.
 
 **[[MoveWait n]]**  
-  Wait for number of *Z_move_comp* messages from RAMPS
+  Wait for number of *Z_move_comp* messages from RAMPS or similar boards.
 
 **[[MoveCounterSet n]]**  
   Set n as current move counter
+
+```gcode
+[[MoveCounterSet 0]]
+G1 Z10 F200
+[[MoveWait 1]]
+```
+#### Using [[GPIOWaitForLow]] keyword
+
+To synchronize movements nanoDLP waits for pin to be LOW. At the start of movement, controllers / drivers must make this pin HIGH and at the end of movement make it LOW. Maximum delay for detection is 1ms.
+
+```gcode
+G1 Z1.1
+[[GPIOWaitForLow]]
+```
+
+#### Using [[ResponseCheck ExpectedOK BufferSize]] keyword
+If the firmware you are using on the controller board send ok response after execution of each command, you can use this command to synchronize movements.
 
 **[[ResponseCheck ExpectedOK BufferSize]]**  
   Helps synchronize fast moving SLS and laser SLA systems. It limits how many gcode will be send to RAMPS before waiting for response from RAMPS. It requires ok response from RAMPS after commands get completed and not after receiving them.
@@ -172,8 +192,31 @@ Change current layer `eg. [[LayerChange 22.1]]`
 **[[ResponseCheck]]**  
   Reset OK response counter to zero
 
-**[[Pause]]**  
-  Pause the printer, requires resume from dashboard to continue.
+```gcode
+[[ResponseCheck]]
+G1 X1.1
+[[ResponseCheck 1 1]]
+```
+
+#### Using [[WaitForDoneMessage]] keyword
+
+By using marlin or any other NanoDLP compatible firmware you can achieve sync movements. After this keyword nanoDLP will wait for *Z_move_comp* response from the shield. Not suitable for fast moving printers.
+
+**[[WaitForDoneMessage n]]**  
+  Wait for *Z_move_comp* message from RAMPS or wait for n second. Which happens earlier.
+
+```gcode
+G1 Z1.1
+[[WaitForDoneMessage]]
+```
+
+#### Using [[Delay Seconds]] keyword
+It is possible to put delay after each movement. It is the most widely used method.
+
+```gcode
+G1 Z1.1
+[[Delay 1.5]]
+```
 
 ### Communication
 
@@ -532,51 +575,7 @@ Stat
 For more details about how to use dynamic values, you can check out [this guide](https://docs.google.com/document/d/1ySVb57AXCVfBFSr9KF7B7k3M130pJvRXXfEoh6pJP_4/edit).
 
 
-## Examples
-
-### Synchronizing movements
-
-NanoDLP does not have knowledge of how much time it would take to finish a movement on RAMPS. There are a couple of ways to solve this problem.
-
-#### Using [[Delay Seconds]] keyword
-It is possible to put delay after each movement. It is the most widely used method.
-
-`
-G1 Z1.1
-[[Delay 1.5]]
-`
-
-
-#### Using [[GPIOWaitForLow]] keyword
-
-To synchronize movements nanoDLP waits for pin to be LOW. At the start of movement, controllers / drivers must make this pin HIGH and at the end of movement make it LOW. Maximum delay for detection is 1ms.
-
-`
-G1 Z1.1
-[[GPIOWaitForLow]]
-`
-
-
-#### Using [[WaitForDoneMessage]] keyword
-
-By using marlin or any other NanoDLP compatible RAMPS firmware you can achieve sync movements. After seeing this keyword nanoDLP will wait for *Z_move_comp* response from RAMPS.
-
-`
-G1 Z1.1
-[[WaitForDoneMessage]]
-`
-
-
-#### Using [[ResponseCheck ExpectedOK BufferSize]] keyword
-If the firmware you are using on the controller board send ok response after execution of each command, you can use this command to synchronize movements.
-
-`
-[[ResponseCheck]]
-G1 X1.1
-[[ResponseCheck 1 1]]
-`	
-
-### Crash recovery
+## Crash recovery
 
 Using the right settings is the key to crash recovery and to benefit from nanoDLP in full potential. A way to do this is to delegate positioning to nanoDLP.
 
