@@ -82,7 +82,7 @@ Hollowing result wall thickness.
 
 #### Consistency
 
-Lower consistency means wall thickness would be less accurate, but the hollowing process would be faster.
+Lower consistency means wall thickness would be less accurate, but the hollowing process would be faster. With a low accuracy, the result wall thickness might be uneven.
 
 #### Min Cavity Size
 
