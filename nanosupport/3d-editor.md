@@ -108,7 +108,7 @@ The same 3D model *after* the hollowing process:
 
 ## Repair
 
-3D items can be repaired. More info is made available by [a post](https://www.nanodlp.com/2021/11/08/stl-mesh-repair/). The repair process tries to:
+3D items can be repaired. More info is made available by [an extensive post](https://www.nanodlp.com/2021/11/08/stl-mesh-repair/). The repair process tries to:
 
 * Harmonize normal vectors.
 * Remove non-manifolds.
