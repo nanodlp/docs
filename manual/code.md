@@ -636,13 +636,13 @@ You can find advanced examples of code capabilities.
 
 As displays getting higher resolution (eg. 8K), cure time may get less accurate as large amount of data should be transferred to GPU. You can use following trick to remove any inaccuracy by delegating cure time duration to shield.
 
-Assume you are using M104 to turn uv light on and M105 to off. Use below code on during cure code input on profile.
+Assume you are using M104 to turn uv light on and M105 to off. Use below code on during cure code input on profile. Better to use zero as cure time (burn-in, normal and dynamic), as it will be controlled by below code, additional cure time will be added on top.
 
 ```
 [[MoveCounterSet 0]]
 G4 P100; Wait for 100ms to make sure resin settled
 M104; Turn on the UV LED
-G4 P18000; Wait for 18seconds 
+G4 P18000; Wait for 18 seconds
 [[MoveWait 2]] ; Wait until shield returns Z_move_done which indicate G4 P18000 finished
 M105; Turn off the UV LED
 ```
