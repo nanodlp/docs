@@ -41,3 +41,4 @@ Change to the majority of NanoDLP options will be applied on-fly, that means you
 ## More
 
 * [Speed]({{<ref "speed">}})
+* [Display Calibration]({{<ref "display-calibration">}})
