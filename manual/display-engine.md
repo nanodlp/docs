@@ -41,3 +41,8 @@ It is desktop only solution, due to possible timing and reliability issue on des
 | Stability                    | Great | Great                          | Good   |
 
 
+## Display Number
+
+It is possible to use HDMI, DSI and GPIO to connect displays to Raspberry Pi. To use HDMI output value must be 0 and for the other type of displays value usually is 1. If both DSI and HDMI connected usually HDMI will start from 2.
+
+On Windows and Linux desktop, having zero value will make NanoDLP choose secondary display automatically. For force NanoDLP use primary display use value 1 and for secondary use 2.

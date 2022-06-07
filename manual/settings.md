@@ -37,3 +37,7 @@ On-screen formula calculators help you see how changes on these inputs impact yo
 ### Regenerate ⟲
 
 Change to the majority of NanoDLP options will be applied on-fly, that means you can change parameter during printing and see the result of those changes. But some parameters require re-slicing of the plate and would not applied during printing and will require plate regeneration.
+
+## More
+
+* [Speed]({{<ref "speed">}})
