@@ -12,6 +12,9 @@ toc: true
 * [Adaptive Layer Thickness]({{<ref "adaptive-thickness">}})
 * [3D Anti-aliasing]({{<ref "aa-3d">}})
 * Anti-aliasing
+* [Dimming]({{<ref "dimming">}})
+* [Barrel]({{<ref "barrel">}})
+* [Mask Generator]({{<ref "mask-generator">}})
 
 ## Anti-aliasing
 

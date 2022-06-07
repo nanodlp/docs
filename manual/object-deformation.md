@@ -13,4 +13,4 @@ toc: true
 * [Correct Barrel Effect]({{<ref "barrel">}}) caused by projector lens.
 * [Correct Shrinkage]({{<ref "erode">}}) caused by resin expansion after cure time.
 * [Dimming]({{<ref "dimming">}}) to prevent expansion on fully cured parts.
-* Mask to correct uneven light output.
+* [Mask]({{<ref "mask-generator">}}) to correct uneven light output.
