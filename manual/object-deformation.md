@@ -14,3 +14,4 @@ toc: true
 * [Correct Shrinkage]({{<ref "erode">}}) caused by resin expansion after cure time.
 * [Dimming]({{<ref "dimming">}}) to prevent expansion on fully cured parts.
 * [Mask]({{<ref "mask">}}) to correct uneven light output.
+* [Hollowing]({{<ref "hollowing">}}) empty inside of solid objects.
