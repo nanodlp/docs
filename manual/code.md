@@ -153,7 +153,7 @@ Change current layer `eg. [[LayerChange 22.1]]`
   Pause the printer, requires resume from dashboard to continue.
 
 ### Synchronization
-NanoDLP does not have knowledge of how much time it would take to finish a movement on shield. There are a couple of ways to solve this problem.
+NanoDLP when used with shield, could not detect how much time it would takes to finish a movement. There are a couple of ways to solve this problem.
 
 Checkout [Troubleshoot Issues]({{< ref "troubleshoot" >}}) for more delays on possible problems could be caused by wrong synchronization.
 
