@@ -17,7 +17,7 @@ There are many code fields on both NanoDLP's machine settings and resin profile.
 * Boot-up - will be run once just after NanoDLP executed
 * Start / Stop / Resume print
 * Before / After layer
-* Dynamic cure time, speed and lifting
+* During cure time - run once cure starts
 * Shutdown - run before shutdown button presses
 * Shutter on / off - run if shutter enabled, consider possible gcodes will be send async, so it may cause issue for synchronization mechanisms
 
@@ -39,6 +39,15 @@ Using these codes you can do many advanced things such as:
 * Synchronize movements
 * Communicate with other programs
 * Calculate many parameters using current status of the print and printer
+
+### Async codes
+
+Shutter codes being processed in parallel, it is very important to consider synchronization mechanism before using async gcode inputs. As it may cause issue on synchronization as it does not guaranteed, when these codes being reached controller board, which may cause printer stalls. It is better to move shutter open/close codes to before/after layer code inputs on profile level.
+
+### GCODE
+
+Gcode is a language being used by major controller board firmwares such as Marlin and GRBL. It helps do many different hardware actions.
+For more information on main commands and compatibility check [RepRap gcode page](https://reprap.org/wiki/G-code).
 
 ## Variables
 
@@ -569,10 +578,12 @@ Stat
 
 ## Dynamic fields
 
-* Using dynamic fields, NanoDLP will ignore any static value.
-* For negative dynamic lift, static lift value from the profile will be used.
+The result of equations will be used as a value for relevant operation. It could includes JS (including external calls), equations and etc.
 
-For more details about how to use dynamic values, you can check out [this guide](https://docs.google.com/document/d/1ySVb57AXCVfBFSr9KF7B7k3M130pJvRXXfEoh6pJP_4/edit).
+* Using dynamic fields, NanoDLP will ignore any static value.
+* For negative values, static values will be used.
+
+For more details about how to use dynamic values, you can check out [dynamic value guide](https://docs.google.com/document/d/1ySVb57AXCVfBFSr9KF7B7k3M130pJvRXXfEoh6pJP_4/edit).
 
 
 ## Crash recovery
@@ -585,24 +596,27 @@ Start of Print
 
 ```
 G90 ; Put positioning in absolute mode
+[[MoveCounterSet 0]]
 G28 ; Homing
-[[WaitForDoneMessage]] ; Wait until movement is completed, it requires firmwares to get patched for Z_move_comp, if you do not want to use patched firmware you can use [[Delay n.n]] instead
+[[MoveWait 1]] ; Wait until movement is completed, it requires firmwares to get patched for Z_move_comp, if you do not want to use patched firmware you can use [[Delay n.n]] instead
 [[PositionSet 0]] ; Set current position on nanodlp so it could be recovered in case of failure
 ```
 
 Before Layer
 
 ```
+[[MoveCounterSet 0]]
 G1 Z[[LayerPosition]] ; Move to layer position
-[[WaitForDoneMessage]] ; Wait for the movement to get finished
+[[MoveWait 1]] ; Wait for the movement to get finished
 [[PositionSet [[LayerPosition]]]] ; Save layer position as the current position
 ```
 
 After Layer
 
 ```
+[[MoveCounterSet 0]]
 G1 Z{[[LayerPosition]]+[[ZLiftDistance]]} ; Lift to wait position
-[[WaitForDoneMessage]] ; Wait for the movement to get finished
+[[MoveWait 1]] ; Wait for the movement to get finished
 [[PositionChange [[ZLiftDistance]]]] ; Again update position
 ```
 
@@ -614,11 +628,21 @@ G92 Z[[CurrentPosition]] Y0 X0 ; System crashed so we need to recover current po
 G1 Z[[LayerPosition]] ; Move to layer position
 ```
 
-## GCODE
+## Examples
 
-Gcode is a language being used by major controller board firmwares such as Marlin and GRBL. It helps do many different hardware actions.
-For more information on main commands and compatibility check [RepRap gcode page](https://reprap.org/wiki/G-code).
+You can find advanced examples of code capabilities.
 
-## Async codes
+### Accurate cure times
 
-Shutter codes being processed in parallel, it is very important to consider synchronization mechanism before using async gcode inputs. As it may cause issue on synchronization as it does not guaranteed, when these codes being reached controller board, which may cause printer stalls. It is better to move shutter open/close codes to before/after layer code inputs on profile level.
+As displays getting higher resolution (eg. 8K), cure time may get less accurate as large amount of data should be transferred to GPU. You can use following trick to remove any inaccuracy by delegating cure time duration to shield.
+
+Assume you are using M104 to turn uv light on and M105 to off. Use below code on during cure code input on profile.
+
+```
+[[MoveCounterSet 0]]
+G4 P100; Wait for 100ms to make sure resin settled
+M104; Turn on the UV LED
+G4 P18000; Wait for 18seconds 
+[[MoveWait 2]] ; Wait until shield returns Z_move_done which indicate G4 P18000 finished
+M105; Turn off the UV LED
+```
