@@ -658,3 +658,18 @@ You can find some example, they may not compatible with your display.
 [[Exec echo "standby 0" | cec-client -s]]; Turn off display
 [[Exec echo "on 0" | cec-client -s]]; Turn on display
 ```
+
+### Light output
+
+Light output of LED and projector lamps decrease by time. To keep output same for every prints you need to adjust light output. 
+
+It is specially important for sensitive dental resins.
+
+This modifier's unit is percentage and it effect color inputs on all profiles.
+
+0 means no change to output. 80 means 80% increase in light output. -80 means 80% decrease in light output.
+
+For example if profile render color is total white (#FFFFFF), -100% modifier make it total black (#000000).
+It only calculated once before slicing of a plate and only effects newly generated plates from source files.
+
+You should use Light Output Formula input on machine settings page.
