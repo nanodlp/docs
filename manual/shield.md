@@ -16,11 +16,20 @@ You can have fully functional 3D SLA printer without using extra controller with
 
 ## Hardware choices
 
-Any RAMPS compatible Atmel (Arduino) and ARM boards could be used as controller, you can use [NanoDLP controller board](https://www.nanodlp.com/nanodlp-controller-board/) which is ready to use without modification.
+Any RAMPS compatible Atmel (Arduino) and ARM boards could be used as controller, you can use [NanoDLP controller board](https://www.nanodlp.com/nanodlp-controller-board/) which is ready to use without modification. 
 
-## Firmware
+### Protocol
 
-There are many RAMPS firmwares but due to official NanoDLP support, our preferred firmware is [Marlin](https://marlinfw.org/). It fully support NanoDLP movement synchronization with [single config change](https://github.com/MarlinFirmware/Marlin/blob/2.0.x/Marlin/Configuration_adv.h#L3437). 
+Different protocol such as serial (USB) and i2c supported to communicate with shield.
+
+### Encoding
+
+* ASCII Encoding: Adds line terminations (\r\n) automatically. Suitable for firmware such as Marlin.
+* Binary Encoding: Removes any new line and converts base16 to binary. Suitable for Trinamic like of boards.
+
+### Firmware
+
+There are many firmwares but due to official NanoDLP support, our preferred firmware is [Marlin](https://marlinfw.org/). It fully support NanoDLP movement synchronization with [single config change](https://github.com/MarlinFirmware/Marlin/blob/2.0.x/Marlin/Configuration_adv.h#L3437). 
 
 Other firmware also could be used but for synchronization purpose you need to use NanoDLP patched version, without patched version you may need to use other mechanisms for synchronization which is a more difficult to setup.
 
@@ -43,7 +52,6 @@ To find out the correct address you can connect to Raspberry through SSH protoco
 ```ls /dev/tty*```
 
 Connect your device to Raspberry Pi and type the above command again. The additional path belongs to your device.
-
 
 ### Windows Version
 

@@ -646,3 +646,15 @@ G4 P18000; Wait for 18 seconds
 [[MoveWait 2]] ; Wait until shield returns Z_move_done which indicate G4 P18000 finished
 M105; Turn off the UV LED
 ```
+
+### Turn on/off display
+
+Following commands are suitable for sending command through HDMI-CEC.
+You can find some example, they may not compatible with your display.
+
+```
+[[Exec /opt/vc/bin/tvservice -o]] ; Cut the signal
+[[Exec /opt/vc/bin/tvservice -p]] ; Restore the signal
+[[Exec echo "standby 0" | cec-client -s]]; Turn off display
+[[Exec echo "on 0" | cec-client -s]]; Turn on display
+```
