@@ -1,11 +1,17 @@
 ---
-title: "Mask Generator"
-description: "Mask generator help you create mask file to ensure even light output from any display."
+title: "Mask"
+description: "Mask help you ensure even light output from any display."
 lead: ""
 draft: false
 images: []
 toc: true
 ---
+
+Some of the light sources which have been used in SLA printers have uneven light issue.
+
+To solve this problem, mask the file that is being used. It is basically a PNG file that modifies the pixel light output of each layer.
+
+## Mask generator
 
 Mask generator help you create mask file to ensure even light output from any display.
 
@@ -13,7 +19,7 @@ The generated mask file could be used on setup page to be applied on all jobs be
 
 You need UV sensor or an equivalent to use this feature.
 
-## How to use it?
+### How to use it?
 
 1. Go to display calibration and press mask generator button
 2. Empty the Tank of resin and clean the Tank bottom surfaces inside and out.

@@ -14,7 +14,7 @@ toc: true
 * Anti-aliasing
 * [Dimming]({{<ref "dimming">}})
 * [Barrel]({{<ref "barrel">}})
-* [Mask Generator]({{<ref "mask-generator">}})
+* [Mask Generator]({{<ref "mask">}})
 
 ## Anti-aliasing
 
