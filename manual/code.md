@@ -643,8 +643,8 @@ Assume you are using M104 to turn uv light on and M105 to off. Use below code on
 G4 P100; 100ms wait to make sure resin settled
 M104; Turn on the UV LED
 G4 P18000; 18 seconds wait
-[[MoveWait 2]] ; Wait until shield returns Z_move_done which indicate G4 P18000 finished
 M105; Turn off the UV LED
+[[MoveWait 2]] ; Wait until shield returns Z_move_done which indicate G4 P18000 finished
 ```
 
 ### Turn on/off display
