@@ -3,6 +3,9 @@ title: "Settings"
 description: "There are many settings and parameters that could be used to setup your printer on NanoDLP. Here we go through overview of those settings."
 lead: "There are many settings and parameters that could be used to setup your printer on NanoDLP. Here we go through overview of those settings."
 draft: false
+menu:
+  docs:
+    parent: "manual"
 images: []
 toc: true
 ---
@@ -37,6 +40,30 @@ On-screen formula calculators help you see how changes on these inputs impact yo
 ### Regenerate ⟲
 
 Change to the majority of NanoDLP options will be applied on-fly, that means you can change parameter during printing and see the result of those changes. But some parameters require re-slicing of the plate and would not applied during printing and will require plate regeneration.
+
+## Printer Type
+NanoDLP supports different printer types and each one does have different properties and behavior. 
+
+### Projector LCD
+This the default printer type. It is the only printer type support direct control. All fields behave as expected for shield control.
+
+### Laser
+If you are using galvo laser type printer for SLA or SLS, this is the printer type you need to choose. In addition to usual "Projector LCD" type printers, instead of curing layer it generate gcode for shield in order to move laser source in x/y plane.
+
+### Non-Stop LCD Printer
+On this mode, only before and layer curing actions happen and after layer skipped. The most of actions for this printer type being run in parallel to speedup printing.
+
+### UV LED Printer
+Instead of relaying on NanoDLP to control cure time, shield need to control cure time. Layers being displayed at the start of each layer, but it expected printer to cure layer just after UV LED on. It is suitable for fast high resolution printers (8k+).
+
+```
+[[MoveCounterSet 0]]
+G1 Z1; Move to layer
+M104; UV LED On
+G4 P1400; Cure layer
+M105; UV LED Off
+[[MoveWait 2]]; Both G1 and G2 returns Z_move_comp
+```
 
 ## More
 
