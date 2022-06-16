@@ -85,6 +85,13 @@ Do not wire shutter power to Raspberry Pi itself as it could have negative effec
 * USB / Serial - ASCII (\n): Communicate in ASCII mode and end commands with new line
 * USB / Serial - Binary: Communicate in Binary mode
 
+## DSI HMI
+
+DSI interface could be used to drive touchscreen display as HMI. Currently different image required to use NanoDLP+DSI HMI together. In addition to separate process for DSI following changes applied to make DSI works together with NanoDLP.
+
+* Changing default display id to two from NanoDLP setup page.
+* Add following command to config.txt "dtoverlay=vc4-fkms-v3d"
+
 ## Nextion
 
 Nextion displays being supported by NanoDLP internally.
