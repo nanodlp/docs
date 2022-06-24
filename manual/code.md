@@ -46,7 +46,7 @@ Shutter codes being processed in parallel, it is very important to consider sync
 
 ### GCODE
 
-Gcode is a language being used by major controller board firmwares such as Marlin and GRBL. It helps do many different hardware actions.
+Gcode is a language being used by major controller board firmware such as Marlin, klipper and GRBL. It helps do many different hardware actions.
 For more information on main commands and compatibility check [RepRap gcode page](https://reprap.org/wiki/G-code).
 
 ## Variables
@@ -91,10 +91,26 @@ For more information on main commands and compatibility check [RepRap gcode page
 **[[AreaCount]]**  
 	Current layer's total number of solid areas
 
+### Wait
+
+**[[WaitBeforePrint]]**  
+  Wait before exposure in second.
+
+**[[WaitAfterPrint]]**  
+  Wait after exposure in second.
+
+**[[TopWait]]**  
+  Wait after printer lifts second.
+
 ### Misc
+**[[CureTime]]**  
+  Cure/exposure time in second. It calculated based on normal layer cure time, Support layer cure time and dynamic cure times.
+
+**[[SupportLayerCount]]**  
+  Number of support layers.
 
 **[[ZSpeed]]**  
-  Speed in micron/second, calculated from startup/min/max/slow section speeds in setup page. The result of dynamic speed will be used.
+  Speed in mm/min, calculated from startup/min/max/slow section speeds in setup page. The result of dynamic speed will be used.
 
 **[[CurrentAction]]**  
   Return current status/action of the printer: MoveTo, GcodeBefore, WaitBefore, DisplayLayer, WaitAfter, GcodeAfter, MoveToWait, WaitAfterList
