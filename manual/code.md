@@ -19,7 +19,7 @@ There are many code fields on both NanoDLP's machine settings and resin profile.
 * Before / After layer
 * During cure time - run once cure starts
 * Shutdown - run before shutdown button presses
-* Shutter on / off - run if shutter enabled, consider possible gcodes will be send async, so it may cause issue for synchronization mechanisms
+* Shutter on / off - run if shutter enabled, consider possible GCodes will be send async, so it may cause issue for synchronization mechanisms
 
 There are other fields that only support JS, variable and math functionalities:
 
@@ -224,6 +224,8 @@ G1 X1.1
 ```
 
 #### Using [[WaitForDoneMessage]] keyword
+
+{{< alert icon="💡" text="This keyword deprecated, instead use MoveWait and MoveCounterReset." >}}
 
 By using marlin or any other NanoDLP compatible firmware you can achieve sync movements. After this keyword nanoDLP will wait for *Z_move_comp* response from the shield. Not suitable for fast moving printers.
 
