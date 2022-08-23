@@ -44,16 +44,16 @@ Change to the majority of NanoDLP options will be applied on-fly, that means you
 ## Printer Type
 NanoDLP supports different printer types and each one does have different properties and behavior. 
 
-### Projector LCD
+### Projector / UV LCD
 This the default printer type. It is the only printer type support direct control. All fields behave as expected for shield control.
 
 ### Laser
 If you are using galvo laser type printer for SLA or SLS, this is the printer type you need to choose. In addition to usual "Projector LCD" type printers, instead of curing layer it generate gcode for shield in order to move laser source in x/y plane.
 
-### Non-Stop LCD Printer
+### Non-Stop Printer
 On this mode, only before and layer curing actions happen and after layer skipped. The most of actions for this printer type being run in parallel to speedup printing.
 
-### UV LED Printer
+### High Resolution Printer
 Instead of relaying on NanoDLP to control cure time, shield need to control cure time. Layers being displayed at the start of each layer, but it expected printer to cure layer just after UV LED on. It is suitable for fast high resolution printers (8k+).
 
 ```

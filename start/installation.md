@@ -55,6 +55,8 @@ There are two ways to install NanoDLP on Raspberry Pi. Easy and advanced one, th
 4. If you have issue running from file manager, from terminal go to the program's folder and run it from there.
 5. Start using NanoDLP by opening [127.0.0.1](http://127.0.0.1:8080) link on your favorite browser.
 
+You can checkout guide on [installing NanoDLP on any Linux SBCs]({{< ref "sbc-installation" >}}).
+
 ## The next step
 
 The next step you need to go through is [The First Print →]({{< ref "first_print" >}}).
