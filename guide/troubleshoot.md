@@ -36,3 +36,17 @@ It is much better to move any gcode inside shutter inputs to before and after la
 May caused by bad synchronization. Synchronization keyword get passed earlier because of wrong command usage or bad wiring on shield <=> driver board.
 
 Also having shutter gcode without wrong synchronization method may cause similar issues.
+
+### Wireless (WIFI) connection is unstable
+
+Turning off wireless power saving mode may help. Edit ```/etc/rc.local``` file using command below.
+
+```
+sudo nano /etc/rc.local
+```
+
+Add below line to the end of file.
+
+```
+iwconfig wlan0 power off
+```
