@@ -305,6 +305,8 @@ G1 Z22.25 F100
 M117
 ```
 
+{{< alert icon="👉" text="Variable called `output` reprocessed as output of the Javascript code snippet. The variable being read as string." >}}
+
 ### Accessing NanoDLP context
 
 {{< alert icon="👉" text="Global context discussed here may change without notice. Use with cautious." >}}
