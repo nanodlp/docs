@@ -154,7 +154,7 @@ Change current layer `eg. [[LayerChange 22.1]]`
 **[[PositionChange mm]]**  
   Update relative position update `eg. [[PositionChange -2.1]]`
 
-**[[DisplayLayer LayerID Multi-Cure-Part Return-Cure-Time]]**  
+**[[DisplayLayer LayerID MultiCurePart ReturnCureTime]]**  
   Display any layer from current plate `eg. [[DisplayLayer 10]]`
   Display layer 20, part two of the multi-cure print and return value `[[DisplayLayer 20 2 true]]`
 
