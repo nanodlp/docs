@@ -12,11 +12,11 @@ toc: true
 
 ## BCM (DispmanX)
 
+{{< alert icon="💡" text="It is going to be deprecated by Raspberry Pi foundation." >}}
+
 It is a way to communicate directly with Raspberry Pi (Broadcom chipsets) to display images. Performance is great but only works on Raspberry Pi.
 
 No option needed to enable it, it automatically being used on Raspberry Pi if other display engine does not enabled manually.
-
-Only reason not use it on Raspberry Pi is when NanoDLP DisplaymanX is not compatible with your display in forms of reliability issue.
 
 ## Direct
 
