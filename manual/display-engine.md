@@ -18,6 +18,10 @@ No option needed to enable it, it automatically being used on Raspberry Pi if ot
 
 Only reason not use it on Raspberry Pi is when NanoDLP DisplaymanX is not compatible with your display in forms of reliability issue.
 
+## Direct
+
+Linux only solution, if there is available support on Linux kernel, it try to list and use available graphic interfaces on the kernel. The current implementation does use buffers to speedup displaying large images (8K+). Memory usage on this engine is quite higher than the others.
+
 ## Framebuffer
 
 This is very basic form of updating display on Linux and Mac. Just need to put correct path to enable it instead of BCM.
@@ -28,17 +32,20 @@ It is desktop only solution, due to possible timing and reliability issue on des
 
 ## BCM (DispmanX) vs. Framebuffer vs. OpenGL
 
-| Support                      | BCM   | Framebuffer                    | OpenGL |
-|------------------------------|-------|--------------------------------|--------|
-| Raspberry Pi w. Server OS    | Yes   | No                             | No     |
-| Raspberry Pi w. Full OS      | No    | Yes (Should be Enabled)        | Yes    |
-| Linux – Server (ARM, AMD64)  | No    | Yes                            | No     |
-| Linux – Desktop (ARM, AMD64) | No    | Yes (Should be Enabled)        | Yes    |
-| Windows                      | No    | No                             | Yes    |
-| Mac                          | No    | No (There are some workaround) | Yes    |
-| Performance (FPS)            | Great | Good                           | Good   |
-| Compatibility                | Good  | Great                          | Good   |
-| Stability                    | Great | Great                          | Good   |
+| Support                      | BCM   | Framebuffer                    | OpenGL | Direct |
+|------------------------------|-------|--------------------------------|--------|--------|
+| Raspberry Pi w. Server OS    | Yes   | No                             | No     | Yes    |
+| Raspberry Pi w. Full OS      | No    | Yes (1)                        | Yes    | Yes (1)|
+| Linux – Server (ARM, AMD64)  | No    | Yes                            | No     | Yes    |
+| Linux – Desktop (ARM, AMD64) | No    | Yes (1)                        | Yes    | Yes (1)|
+| Windows                      | No    | No                             | Yes    | No     |
+| Mac                          | No    | No (There are some workaround) | Yes    | No     |
+| Performance (FPS)            | Good  | Average                        | Average| Great  |
+| Compatibility                | Good  | Great                          | Good   | Good   |
+| Stability                    | Great | Great                          | Good   | Great  |
+| Memory Usage                 | Great | Good                           | Good   | Average|
+
+1. Should be enabled on the most cases.
 
 
 ## Display Number
