@@ -18,7 +18,7 @@ Using the new feature you can choose multiple cure times for the same object dur
 
 Whole print will takes as much as time required for the single plate using highest chosen cure time.
 
-<img src="https://www.nanodlp.com/help/multicure.png" style="width:100%">
+<img src="https://www.nano3dtech.com/help/multicure.png" style="width:100%">
 
 ## How to use it?
 

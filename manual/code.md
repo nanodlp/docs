@@ -291,7 +291,7 @@ M116
 [JS]
 var distance = [[LayerThickness]]-[[ZLiftDistance]]*[[LayerNumber]];
 var xmlHttp = new XMLHttpRequest();
-xmlHttp.open("GET", "https://www.nanodlp.com/speed-calculation?distance="+distance, false);
+xmlHttp.open("GET", "https://www.nano3dtech.com/speed-calculation?distance="+distance, false);
 xmlHttp.send(null);
 output = "G1 Z"+distance+" F"+xmlHttp.responseText;
 [/JS]

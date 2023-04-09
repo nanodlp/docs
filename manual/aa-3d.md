@@ -6,7 +6,7 @@ draft: false
 images: []
 toc: true
 ---
-<img src="https://www.nanodlp.com/help/3d-aa.jpg" width="100%" alt="3D SLA Anti Aliasing">
+<img src="https://www.nano3dtech.com/help/3d-aa.jpg" width="100%" alt="3D SLA Anti Aliasing">
 
 ## What is/are the reason(s) to use it?
 

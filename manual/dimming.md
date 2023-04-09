@@ -13,7 +13,7 @@ Pixel Dimming ensure the highest print quality along with an easy setup experien
 * Makes it possible to use one profile/cure time for different pieces with different thicknesses
 * Increases the PDMS life time
 
-<img src="https://www.nanodlp.com/help/pixel-dimming.png" style="width:100%" alt="3D SLA Pixel Dimming">
+<img src="https://www.nano3dtech.com/help/pixel-dimming.png" style="width:100%" alt="3D SLA Pixel Dimming">
 
 ## What is/are the reason(s) to use it?
 

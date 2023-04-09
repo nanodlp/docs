@@ -30,7 +30,7 @@ Navigate through **System > Machine Settings > Slicing > Remote slicing** and en
 
 IP could be private (local) network IP or public IP / port forwarding, loopback IP (127.0.0.1 / 0.0.0.0) should not used. Default port is usually 80 for Raspberry and 8080 for other devices. Checkout [this guide](https://www.tp-link.com/us/support/faq/838/#windows%2010) if you are not sure how to find your IP address.
 
-<img src="https://www.nanodlp.com/help/remote-slicing.png" style="width:100%">
+<img src="https://www.nano3dtech.com/help/remote-slicing.png" style="width:100%">
 
 ### NanoSupport
 

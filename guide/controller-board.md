@@ -10,7 +10,7 @@ menu:
 toc: true
 ---
 
-This guide will go through more advanced features of the NanoDLP controller board. For the basic guide, checkout [NanoDLP controller board](https://www.nanodlp.com/nanodlp-controller-board/) page.
+This guide will go through more advanced features of the NanoDLP controller board. For the basic guide, checkout [NanoDLP controller board](https://www.nano3dtech.com/nanodlp-controller-board/) page.
 
 ## Change micro-stepping
 
@@ -20,7 +20,7 @@ To change you need to modify both jumpers on the controller board and also NanoD
 
 You can find micro-stepping jumpers on top left of the board.
 
-<img src="https://www.nanodlp.com/wp-content/uploads/2020/10/Stepper-Motor-Driver-1.png" width="80%" alt="NanoDLP Micro-stepping">
+<img src="https://www.nano3dtech.com/wp-content/uploads/2020/10/Stepper-Motor-Driver-1.png" width="80%" alt="NanoDLP Micro-stepping">
 
 Based on table below you need to adjust jumpers.
 

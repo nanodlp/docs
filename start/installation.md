@@ -29,7 +29,7 @@ There are two ways to install NanoDLP on Raspberry Pi. Easy and advanced one, th
 
 ### Easy installation
 
-1. Download [NanoDLP SD image](https://www.nanodlp.com/nanodlp.img.gz)
+1. Download [NanoDLP SD image](https://www.nano3dtech.com/nanodlp.img.gz)
 2. Restore SD card image. 
 2.1. [Windows](https://www.raspberrypi.org/documentation/installation/installing-images/windows.md)
 2.2. [Mac](https://www.raspberrypi.org/documentation/installation/installing-images/mac.md)
@@ -41,15 +41,15 @@ There are two ways to install NanoDLP on Raspberry Pi. Easy and advanced one, th
 1. Install [Raspberry Pi OS Lite](https://www.raspberrypi.org/software/operating-systems/#raspberry-pi-os-32-bit) on SD card.
 2. SSH into Raspberry Pi and run the command below
 
-{{< btn-copy text="(wget https://www.nanodlp.com/download/nanodlp.linux.arm.rpi.stable.tar.gz --no-check-certificate -O - | tar -C /home/pi -xz --warning=no-timestamp);cd /home/pi/printer;sudo ./setup.sh" >}}
+{{< btn-copy text="(wget https://www.nano3dtech.com/download/nanodlp.linux.arm.rpi.stable.tar.gz --no-check-certificate -O - | tar -C /home/pi -xz --warning=no-timestamp);cd /home/pi/printer;sudo ./setup.sh" >}}
 
 ```bash
-(wget https://www.nanodlp.com/download/nanodlp.linux.arm.rpi.stable.tar.gz --no-check-certificate -O - | tar -C /home/pi -xz --warning=no-timestamp);cd /home/pi/printer;sudo ./setup.sh
+(wget https://www.nano3dtech.com/download/nanodlp.linux.arm.rpi.stable.tar.gz --no-check-certificate -O - | tar -C /home/pi -xz --warning=no-timestamp);cd /home/pi/printer;sudo ./setup.sh
 ```
 
 ## Other platforms (Windows, OSx, Linux and SBC)
 
-1. Download appropriate file from the [download page](https://www.nanodlp.com/nanodlp-download/).
+1. Download appropriate file from the [download page](https://www.nano3dtech.com/nanodlp-download/).
 2. Extract ZIP file.
 3. The program is fully portable. You only need to run binary file. Make sure you are running binary from the same folder.
 4. If you have issue running from file manager, from terminal go to the program's folder and run it from there.

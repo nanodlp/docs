@@ -10,11 +10,11 @@ toc: true
 
 Projector lens cause [distortions](https://en.wikipedia.org/wiki/Distortion_(optics)) which may cause large object to deform. The main distortion caused by lenses called barrel distortion.
 
-<img src="https://www.nanodlp.com/help/distortion-1.png" style="width:100%">
+<img src="https://www.nano3dtech.com/help/distortion-1.png" style="width:100%">
 
 Using this feature you can eliminate effect during slicing by deforming sliced layers in reverse.
 
-<img src="https://www.nanodlp.com/help/distortion-2.png" style="width:100%">
+<img src="https://www.nano3dtech.com/help/distortion-2.png" style="width:100%">
 
 ## How to use it?
 

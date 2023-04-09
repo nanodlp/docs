@@ -11,4 +11,4 @@ menu:
 toc: true
 ---
 
-The NanoSupport is offered as an online web app at [this address](https://editor.nanodlp.com). So, if you don't like the software installation process, you can enjoy it as a web app.
+The NanoSupport is offered as an online web app at [this address](https://editor.nano3dtech.com). So, if you don't like the software installation process, you can enjoy it as a web app.

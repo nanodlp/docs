@@ -6,7 +6,7 @@ draft: false
 images: []
 toc: true
 ---
-<img src="https://www.nanodlp.com/help/erode-2.png">
+<img src="https://www.nano3dtech.com/help/erode-2.png">
 
 ## Why using erode or dilate?
 
@@ -16,7 +16,7 @@ While printing objects for practical applications, it can pose a large problem d
 
 Keep in mind the positive value represents the Dilate Areas and Erode Areas is defined by negative value.
 
-<img src="https://www.nanodlp.com/wp-content/uploads/2020/09/erode-1.png" style="width:100%">
+<img src="https://www.nano3dtech.com/wp-content/uploads/2020/09/erode-1.png" style="width:100%">
 
 ## How to use it?
 

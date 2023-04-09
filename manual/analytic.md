@@ -14,7 +14,7 @@ toc: true
 
 NanoDLP helps you visualize all available data on single dashboard.
 
-<img src="https://www.nanodlp.com/wp-content/uploads/2021/01/nanodlp-analytic-dashboard-e1609529958823.png" style="width:100%">
+<img src="https://www.nano3dtech.com/wp-content/uploads/2021/01/nanodlp-analytic-dashboard-e1609529958823.png" style="width:100%">
 
 ## Available features
 
@@ -23,7 +23,7 @@ NanoDLP helps you visualize all available data on single dashboard.
 * Ability to reset collected data
 * CSV export
 
-<img src="https://www.nanodlp.com/wp-content/uploads/2021/01/nanodlp-analytic-dashboard2-1024x794.png" style="width:100%">
+<img src="https://www.nano3dtech.com/wp-content/uploads/2021/01/nanodlp-analytic-dashboard2-1024x794.png" style="width:100%">
 
 ## Sources
 

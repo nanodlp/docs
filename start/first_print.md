@@ -25,7 +25,7 @@ To find out Raspberry Pi or SBC IP you can use one of the ways below. After find
 
 ### Using NanoDLP finder tool
 
-Download, extract and run [NanoDLP Finder Tool](https://www.nanodlp.com/download/nanodlp-finder.zip).
+Download, extract and run [NanoDLP Finder Tool](https://www.nano3dtech.com/download/nanodlp-finder.zip).
 
 ### HMI interface
 
@@ -33,7 +33,7 @@ If you are using, HMI interface you can get IP details by touching WIFI icon on 
 
 ### Online dashboard
 
-Visit [online dashboard](https://www.nanodlp.com/dashboard) to see online NanoDLP printers in your network.
+Visit [online dashboard](https://www.nano3dtech.com/dashboard) to see online NanoDLP printers in your network.
 
 ### Router and OS network area panel
 

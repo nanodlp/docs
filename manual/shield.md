@@ -16,7 +16,7 @@ You can have fully functional 3D SLA printer without using extra controller with
 
 ## Hardware choices
 
-Any RAMPS compatible Atmel (Arduino) and ARM boards could be used as controller, you can use [NanoDLP controller board](https://www.nanodlp.com/nanodlp-controller-board/) which is ready to use without modification. 
+Any RAMPS compatible Atmel (Arduino) and ARM boards could be used as controller, you can use [NanoDLP controller board](https://www.nano3dtech.com/nanodlp-controller-board/) which is ready to use without modification. 
 
 ### Protocol
 
