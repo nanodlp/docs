@@ -62,7 +62,7 @@ There are two ways to install NanoDLP on Raspberry Pi. Easy and advanced one, th
 
 ### 64bit OS
 
-{{< mkdir -p /home/nanodlp/;(wget https://www.nano3dtech.com/download/nanodlp.linux.arm64.beta.tar.gz --no-check-certificate -O - | tar -C /home/nanodlp -xz --warning=no-timestamp);cd /home/nanodlp/setup/server;sudo ./setup.sh" >}}
+{{<  btn-copy text="mkdir -p /home/nanodlp/;(wget https://www.nano3dtech.com/download/nanodlp.linux.arm64.beta.tar.gz --no-check-certificate -O - | tar -C /home/nanodlp -xz --warning=no-timestamp);cd /home/nanodlp/setup/server;sudo ./setup.sh" >}}
 
 ```bash
 mkdir -p /home/nanodlp/;(wget https://www.nano3dtech.com/download/nanodlp.linux.arm64.beta.tar.gz --no-check-certificate -O - | tar -C /home/nanodlp -xz --warning=no-timestamp);cd /home/nanodlp/setup/server;sudo ./setup.sh
