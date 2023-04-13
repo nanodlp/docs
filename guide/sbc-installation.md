@@ -38,7 +38,7 @@ a. If disabling getty, install ssh as well
 5. Login as user pi and create a new directory ```/home/pi/nanodlp/```, then cd into the new directory
 6. Download the appropriate NanoDLP archive from the NanoDLP download page with wget, e.g.
 ``` wget https://www.nano3dtech.com/download/nanodlp.linux.arm64.stable.tar.gz ```
-7. Unpack the compressed archive into the ```~/nanodlp/``` directory.
+7. Unpack the compressed archive into the ```~/nanodlp/``` directory. ``` tar -C /home/nanodlp -xz --warning=no-timestamp -f nanodlp.linux.arm64.stable.tar.gz```
 
 Consider using ``` wget https://www.nano3dtech.com/download/nanodlp.linux.arm.stable.tar.gz ```, If you are using 32-Bit ARM.
 
@@ -145,7 +145,11 @@ Below guide is based on the current Raspberry Pi automatic setup script. It may 
 ARM-based SBC with a Linux server version installed
 Working display output
 
-### Step 1: Install necessary libraries
+### Step 1: Download and unpack NanoDLP
+``` wget https://www.nano3dtech.com/download/nanodlp.linux.arm64.stable.tar.gz ```
+7. Unpack the compressed archive into the ```~/nanodlp/``` directory. ``` tar -C /home/nanodlp -xz --warning=no-timestamp -f nanodlp.linux.arm64.stable.tar.gz```
+
+### Step 2: Install necessary libraries
 Open a terminal and run the following command to install necessary libraries:
 
 ```bash
@@ -154,7 +158,7 @@ sudo apt-get install usbmount ntfs-3g pmount
 
 This step may needed to have working auto USB detection and mounting
 
-### Step 2: Set up logrotate
+### Step 3: Set up logrotate
 Copy the provided logrotate configuration file and set it up to run hourly:
 
 ```bash
@@ -162,16 +166,16 @@ sudo cp config/printer.rotate /etc/logrotate.d/printer
 sudo cp /etc/cron.daily/logrotate /etc/cron.hourly/
 ```
 
-### Step 3: Set up NanoDLP as a service
+### Step 4: Set up NanoDLP as a service
 Copy the provided service file and enable the NanoDLP service:
 
 ```bash
 sudo cp config/nanodlp.service /etc/systemd/system/
 sudo systemctl enable nanodlp
-sudo systemctl daemon-reload```
+sudo systemctl daemon-reload
 ```
 
-### Step 4: Modify systemd-udevd configuration
+### Step 5: Modify systemd-udevd configuration
 Modify the systemd-udevd configuration by running the following commands:
 
 ```bash
@@ -179,14 +183,14 @@ sudo sed -i 's/PrivateMounts=yes/PrivateMounts=no/g' /lib/systemd/system/systemd
 sudo sed -i 's/MountFlags=slave/MountFlags=shared/g' /lib/systemd/system/systemd-udevd.service
 ```
 
-### Step 5: Adjust boot settings
+### Step 6: Adjust boot settings
 Adjust the boot settings to change the console output and disable the cursor:
 
 ```bash
 sudo sed -i 's/console=tty1/console=tty3 vt.global_cursor_default=0/g' /boot/cmdline.txt
 ```
 
-### Step 6: Reboot the device
+### Step 7: Reboot the device
 Report the current IP and reboot the device to apply changes:
 
 ```bash

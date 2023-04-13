@@ -47,7 +47,7 @@ There are two ways to install NanoDLP on Raspberry Pi. Easy and advanced one, th
 (wget https://www.nano3dtech.com/download/nanodlp.linux.arm.rpi.stable.tar.gz --no-check-certificate -O - | tar -C /home/pi -xz --warning=no-timestamp);cd /home/pi/printer;sudo ./setup.sh
 ```
 
-## Other platforms (Windows, OSx, Linux and SBC)
+## Other platforms (Windows, OSx, Linux Desktop)
 
 1. Download appropriate file from the [download page](https://www.nano3dtech.com/nanodlp-download/).
 2. Extract ZIP file.
@@ -55,7 +55,28 @@ There are two ways to install NanoDLP on Raspberry Pi. Easy and advanced one, th
 4. If you have issue running from file manager, from terminal go to the program's folder and run it from there.
 5. Start using NanoDLP by opening [127.0.0.1](http://127.0.0.1:8080) link on your favorite browser.
 
-You can checkout guide on [installing NanoDLP on any Linux SBCs]({{< ref "sbc-installation" >}}).
+## SBCs (Orange Pi, Rock Pi and etc)
+
+1. Install basic Linux OS (no desktop environment) on SD card.
+2. SSH into SBC and run the command below
+
+### 32bit OS
+
+{{< btn-copy text="(wget https://www.nano3dtech.com/download/nanodlp.linux.arm.beta.tar.gz --no-check-certificate -O - | tar -C /home/nanodlp -xz --warning=no-timestamp);cd /home/nanodlp/setup/server;sudo ./setup.sh" >}}
+
+```bash
+(wget https://www.nano3dtech.com/download/nanodlp.linux.arm.beta.tar.gz --no-check-certificate -O - | tar -C /home/pi -xz --warning=no-timestamp);cd /home/nanodlp/setup/server;sudo ./setup.sh
+```
+
+### 64bit OS
+
+{{< btn-copy text="(wget https://www.nano3dtech.com/download/nanodlp.linux.arm64.beta.tar.gz --no-check-certificate -O - | tar -C /home/nanodlp -xz --warning=no-timestamp);cd /home/nanodlp/setup/server;sudo ./setup.sh" >}}
+
+```bash
+(wget https://www.nano3dtech.com/download/nanodlp.linux.arm64.beta.tar.gz --no-check-certificate -O - | tar -C /home/pi -xz --warning=no-timestamp);cd /home/nanodlp/setup/server;sudo ./setup.sh
+```
+
+You can checkout more advanced guide on [installing NanoDLP on any Linux SBCs]({{< ref "sbc-installation" >}}).
 
 ## The next step
 
