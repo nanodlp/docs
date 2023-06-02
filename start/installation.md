@@ -58,22 +58,25 @@ There are two ways to install NanoDLP on Raspberry Pi. Easy and advanced one, th
 ## SBCs (Orange Pi, Rock Pi and etc)
 
 1. Install basic Linux OS (no desktop environment) on SD card.
-2. SSH into SBC and run the command below
+2. SSH into SBC
+3. Make sure you have wget installed using `sudo apt install wget` or relevant command depend on architecture.
+4. Become root by issuing command `sudo su`
+5. Run installation command below depend on OS you are using
 
 ### 64bit OS
 
-{{<  btn-copy text="mkdir -p /home/nanodlp/;(curl -k -L -o - https://www.nano3dtech.com/download/nanodlp.linux.arm64.beta.tar.gz | tar -C /home/nanodlp -xz --warning=no-timestamp); cd /home/nanodlp/setup/server; sudo ./setup.sh" >}}
+{{<  btn-copy text="mkdir -p /home/nanodlp/;(wget https://www.nano3dtech.com/download/nanodlp.linux.arm64.beta.tar.gz --no-check-certificate -O - | tar -C /home/nanodlp -xz --warning=no-timestamp);cd /home/nanodlp/setup/server;sudo ./setup.sh" >}}
 
 ```bash
-mkdir -p /home/nanodlp/;(curl -k -L -o - https://www.nano3dtech.com/download/nanodlp.linux.arm64.beta.tar.gz | tar -C /home/nanodlp -xz --warning=no-timestamp); cd /home/nanodlp/setup/server; sudo ./setup.sh
+mkdir -p /home/nanodlp/;(wget https://www.nano3dtech.com/download/nanodlp.linux.arm64.beta.tar.gz --no-check-certificate -O - | tar -C /home/nanodlp -xz --warning=no-timestamp);cd /home/nanodlp/setup/server;sudo ./setup.sh
 ```
 
 ### 32bit OS
 
-{{< btn-copy text="mkdir -p /home/nanodlp/;(curl -k -L -o - https://www.nano3dtech.com/download/nanodlp.linux.arm.beta.tar.gz | tar -C /home/nanodlp -xz --warning=no-timestamp); cd /home/nanodlp/setup/server; sudo ./setup.sh" >}}
+{{< btn-copy text="mkdir -p /home/nanodlp/;(wget https://www.nano3dtech.com/download/nanodlp.linux.arm.beta.tar.gz --no-check-certificate -O - | tar -C /home/nanodlp -xz --warning=no-timestamp);cd /home/nanodlp/setup/server;sudo ./setup.sh" >}}
 
 ```bash
-mkdir -p /home/nanodlp/;(curl -k -L -o - https://www.nano3dtech.com/download/nanodlp.linux.arm.beta.tar.gz | tar -C /home/nanodlp -xz --warning=no-timestamp); cd /home/nanodlp/setup/server; sudo ./setup.sh
+mkdir -p /home/nanodlp/;(wget https://www.nano3dtech.com/download/nanodlp.linux.arm.beta.tar.gz --no-check-certificate -O - | tar -C /home/nanodlp -xz --warning=no-timestamp);cd /home/nanodlp/setup/server;sudo ./setup.sh
 ```
 
 You can checkout more advanced guide on [installing NanoDLP on any Linux SBCs]({{< ref "sbc-installation" >}}).
