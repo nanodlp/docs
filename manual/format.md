@@ -4,6 +4,9 @@ description: "You can use this guide to understand NanoDLP file format."
 lead: "You can use this guide to understand NanoDLP file format."
 draft: false
 images: []
+menu:
+  docs:
+    parent: "manual"
 toc: true
 ---
 ## Why a new file format?
