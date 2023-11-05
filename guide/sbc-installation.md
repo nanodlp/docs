@@ -162,7 +162,7 @@ This step may needed to have working auto USB detection and mounting
 Copy the provided logrotate configuration file and set it up to run hourly:
 
 ```bash
-sudo cp config/printer.rotate /etc/logrotate.d/printer
+sudo cp /home/pi/printer/config/printer.rotate /etc/logrotate.d/printer
 sudo cp /etc/cron.daily/logrotate /etc/cron.hourly/
 ```
 
