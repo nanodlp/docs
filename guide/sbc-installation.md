@@ -31,14 +31,17 @@ will become effectively headless and require SSH for Linux configuration.
 1. Create a fresh install of Debian on your target SBC, using the images provided either by the
 Debian organization or by your machine’s manufacturer.
 2. Connect to the network. Ethernet is recommended for simplicity and reliability reasons, but
-wireless is available on Debian with the appropriate drivers and network manager of some kind.
-3. ```Install sudo and wget```
-a. If disabling getty, install ssh as well
-4. Create user pi and add to sudoers
-5. Login as user pi and create a new directory ```/home/pi/nanodlp/```, then cd into the new directory
-6. Download the appropriate NanoDLP archive from the NanoDLP download page with wget, e.g.
+wireless is available on Debian with the appropriate drivers and network manager of some kind.  
+It may be advisable to enable ssh, wifi-wan and serial as documented below with ```raspi-config``` or ```armbian-config``` 
+4. Install sudo and wget
+   ```sudo apt install wget```
+a. If disabling getty, install ssh as well.
+   Use raspi-config or equivalent system configurator to enable default ssh. 
+5. Create user pi and add to sudoers
+6. Login as user pi and create a new directory ```/home/pi/nanodlp/```, then cd into the new directory
+7. Download the appropriate NanoDLP archive from the NanoDLP download page with wget, e.g.
 ``` wget https://www.nano3dtech.com/download/nanodlp.linux.arm64.stable.tar.gz ```
-7. Unpack the compressed archive into the ```~/nanodlp/``` directory. ``` tar -C /home/nanodlp -xz --warning=no-timestamp -f nanodlp.linux.arm64.stable.tar.gz```
+8. Unpack the compressed archive into the ```~/nanodlp/``` directory. ``` tar -C /home/nanodlp -xz --warning=no-timestamp -f nanodlp.linux.arm64.stable.tar.gz```
 
 Consider using ``` wget https://www.nano3dtech.com/download/nanodlp.linux.arm.stable.tar.gz ```, If you are using 32-Bit ARM.
 
