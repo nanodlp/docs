@@ -49,4 +49,8 @@ Add below line to the end of file.
 
 ```
 iwconfig wlan0 power off
+
+### Zero layer using remote slicing
+
+When build number on remote slicer host and client differs, it may happens
 ```
