@@ -1,0 +1,19 @@
+---
+title: "Calibration Job"
+description: "Calibration job to find the best cure time quickly."
+lead: "Calibration job to find the best cure time quickly."
+draft: false
+images: []
+menu:
+  docs:
+    parent: "manual"
+toc: true
+---
+
+## Calibration Job
+
+Generates calibration plates with multiple cure times. It helps to find out the best cure time for any type of resin in one go.
+
+You can define cure times and let the program generate multiple pillars with different cure times.
+
+Printing process for calibration plates are different from normal plates, so do not panic if you see fast image switching during the printing process.
