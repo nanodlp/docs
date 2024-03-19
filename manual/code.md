@@ -127,6 +127,9 @@ For more information on main commands and compatibility check [RepRap gcode page
 **[[PlateID]]**  
 	Return Plate ID
 
+**[[ResinAmountAfterPrint]]**  
+	Calculate amount of resin based on detected resin level, vat size and expected consumption for the object.
+
 ### Laser
 
 **[[IsBurninLayer]]**  
@@ -274,6 +277,8 @@ G1 Z1.1
 **[[GPIOLow GPIO]]**  
   Makes any GPIO Low
 
+**[[Notification Type Duration Text]]**  
+  Display a notification on the dashboard and log it. The type can be log, error, or notice. A duration of zero means display the notification until the user closes it. If the duration is positive, the notification will automatically close after that many seconds. The text parameter is the message content to display in the notification.
 
 
 
