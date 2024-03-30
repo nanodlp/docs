@@ -77,7 +77,7 @@ For more information on main commands and compatibility check [RepRap gcode page
 	Current layer number
 
 **[[TotalNumberOfLayers]]**  
-	Total number of the plate layers
+	Total number of the job layers
 
 **[[TotalSolidArea]]**  
 	Current layer's total solid area in mm^2
@@ -112,6 +112,12 @@ For more information on main commands and compatibility check [RepRap gcode page
 **[[ZSpeed]]**  
   Speed in mm/min, calculated from startup/min/max/slow section speeds in setup page. The result of dynamic speed will be used.
 
+**[[RetractSpeed]]**  
+  Retract speed in mm/min, calculated from startup/min/max/slow section speeds in setup page. The result of dynamic speed will be used.
+
+**[[LiftSpeed]]**  
+  Lift speed in mm/min, calculated from startup/min/max/slow section speeds in setup page. The result of dynamic speed will be used.
+
 **[[CurrentAction]]**  
   Return current status/action of the printer: MoveTo, GcodeBefore, WaitBefore, DisplayLayer, WaitAfter, GcodeAfter, MoveToWait, WaitAfterList
 
@@ -122,10 +128,10 @@ For more information on main commands and compatibility check [RepRap gcode page
 	The projector's lamp hours
 
 **[[PlateName]]**  
-	The current plate name
+	The current job name
 
 **[[PlateID]]**  
-	Return Plate ID
+	Return job ID
 
 **[[ResinAmountAfterPrint]]**  
 	Calculate amount of resin based on detected resin level, vat size and expected consumption for the object.
@@ -158,7 +164,7 @@ Change current layer `eg. [[LayerChange 22.1]]`
   Update relative position update `eg. [[PositionChange -2.1]]`
 
 **[[DisplayLayer LayerID MultiCurePart ReturnCureTime]]**  
-  Display any layer from current plate `eg. [[DisplayLayer 10]]`
+  Display layer 10th from current the current job `eg. [[DisplayLayer 10]]`
   Display layer 20, part two of the multi-cure print and return value `[[DisplayLayer 20 2 true]]`
 
 **[[Blank]]**  
@@ -696,6 +702,6 @@ This modifier's unit is percentage and it effect color inputs on all profiles.
 0 means no change to output. 80 means 80% increase in light output. -80 means 80% decrease in light output.
 
 For example if profile render color is total white (#FFFFFF), -100% modifier make it total black (#000000).
-It only calculated once before slicing of a plate and only effects newly generated plates from source files.
+It only calculated once before slicing of a job and only effects newly generated jobs from source files.
 
 You should use Light Output Formula input on machine settings page.

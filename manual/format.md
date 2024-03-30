@@ -32,7 +32,7 @@ ZIP file contains following files
 * 3d.png
 * 3d.png.meta
 * profile.json
-* PNG files 0~10000.png (Required)
+* PNG files 1~10000.png (Required)
 * Plate raw file
 
 ### meta.json
@@ -77,7 +77,7 @@ Override resin profile settings for this specific plate.
 ### 3d.png and 3d.png.meta
 200x100px 3D render of the current plate in PNG format. 
 Layer PNG files
-Each layer must be named starting from 0.png up to 100000.png layers without leading zero or any other name.
+Each layer must be named starting from 1.png up to 100000.png layers without leading zero or any other name.
 
 Format of the each PNG must be 8bit sRGB.
 
@@ -85,3 +85,5 @@ For mono displays each byte can represented a single pixel.
 
 ### Plate source file
 Raw plate file which could be used on NanoDLP to re-slice. 
+
+It must called plate.stl, plate.obj or any other supported format (plate.supported_extension)

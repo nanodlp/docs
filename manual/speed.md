@@ -31,9 +31,9 @@ Speed which being used when distance of platform to tank floor is less than this
 Max speed during printing
 
 ## Dynamic Speed
-Override every speed excluding startup speed during printing. Will be used only for direct control.
+Override every speed excluding startup speed during printing.
 
-Formula result will be used as length of each pulse in nano seconds.
+Formula result will be used as length of each pulse in nano seconds for direct control and mm/min for controller boards.
 In the best case scenario formula will run before each pulse, but to prevent delays it run less frequently in fast speeds.
 
 Startup speed will be used until formula result become available.
