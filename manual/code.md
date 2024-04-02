@@ -286,7 +286,7 @@ G1 Z1.1
 **[[Notification Type Duration Text]]**  
   Display a notification on the dashboard and log it. The type can be log, error, or notice. A duration of zero means display the notification until the user closes it. If the duration is positive, the notification will automatically close after that many seconds. The text parameter is the message content to display in the notification.
 
-
+Type could be default, info, warning, danger and modal, except modal all other types display alert.
 
 ## Javascript support
 
