@@ -49,7 +49,7 @@ NanoDLP supports different printer types and each one does have different proper
 
 This is the default printer type and the only one that currently supports direct control. All settings function as intended for shield control.
 
-When a ([code for cure]({{<ref "code">}})) is provided instead of relying on NanoDLP's default, the shield itself takes over cure time management. In this scenario, each layer is displayed entirely before the shield activates the UV LED to cure it. This approach is ideal for fast, high-resolution printers (8k+).
+When a ([code for curing]({{<ref "code">}})) is provided instead of relying on NanoDLP's default, the shield itself takes over cure time management. In this scenario, each layer is displayed entirely before the shield activates the UV LED to cure it. This approach is ideal for fast, high-resolution printers (8k+).
 
 ```
 [[MoveCounterSet 0]]
