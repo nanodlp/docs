@@ -660,6 +660,10 @@ G92 Z[[CurrentPosition]] Y0 X0 ; System crashed so we need to recover current po
 G1 Z[[LayerPosition]] ; Move to layer position
 ```
 
+## Code for Cure
+
+Same as other dynamic fields, if this field is filled, NanoDLP will delegate the cure time to the board. This is helpful for high-resolution printers that require more precise control over cure time. With this setting, the image for each layer is loaded at the start, but the UV light is turned on with very high accuracy by the controller board or using GPIO pins.
+
 ## Examples
 
 You can find advanced examples of code capabilities.
