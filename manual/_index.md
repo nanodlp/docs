@@ -15,8 +15,8 @@ NanoDLP is a comprehensive 3D printer management system that provides advanced s
 ## Quick Start Guide
 
 **New to NanoDLP?** Start here for a guided introduction:
-- **[Getting Started]({{<ref "/start">}})** - Installation and first-time setup
-- **[First Print]({{<ref "/start/first_print">}})** - Complete your first successful print
+- **[Getting Started]({{<ref "start">}})** - Installation and first-time setup
+- **[First Print]({{<ref "start/first_print">}})** - Complete your first successful print
 - **[Basic Configuration]({{<ref "settings">}})** - Essential settings to get you printing
 
 ## Essential Workflows
@@ -74,7 +74,7 @@ NanoDLP is a comprehensive 3D printer management system that provides advanced s
 
 ## Troubleshooting
 
-- **[Troubleshooting Guide]({{<ref "/guide/troubleshoot">}})** - Common problems and solutions
+- **[Troubleshooting Guide]({{<ref "guide/troubleshoot">}})** - Common problems and solutions
 - **[Hardware Issues]({{<ref "hardware">}})** - Diagnose and fix hardware problems
 - **[Print Quality Issues]({{<ref "print-quality">}})** - Resolve quality problems
 - **[System Problems]({{<ref "settings">}})** - Fix configuration and system issues
