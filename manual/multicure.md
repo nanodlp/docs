@@ -24,13 +24,13 @@ Whole print will takes as much as time required for the single plate using highe
 
 On the plate add page, there are a button called *advanced*, click and enter whatever cure times you need.
 
-Base cure time for the current profile, also will be added to cure times.
+Base cure time for the current profile, will be omitted.
 
 Print the same object with multiple cure times all at once. The chosen profile's settings will be applied on all copies except normal layer cure times.
 
-In addition to all specified cure times, an extra object will be printed using profile cure time. It only will replace normal layer cure time and would not affect burnin layers.
+In addition to all specified cure times, an extra object will be printed using profile cure time. It only will replace normal layer cure time and would not affect burn-in layers.
 
-For example if there is 3 cure times specified: 3,4,5 and chosen profile cure time is 2.5. Four copies of the object will be printed with following cure times 2.5,3,4,5
+For example if there is 3 cure times specified: 3,4,5. Three copies of the object will be printed with following cure times 3,4,5
 
 If there is not enough space to print all cure times, lowest ones will be chosen.
 
