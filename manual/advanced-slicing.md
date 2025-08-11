@@ -12,266 +12,235 @@ toc: true
 
 ## Overview
 
-NanoDLP's advanced slicing features provide sophisticated control over the printing process, allowing you to optimize print quality, reduce material usage, and achieve better results with complex geometries. These features go beyond basic slicing to provide intelligent, adaptive printing solutions.
+NanoDLP's advanced slicing features provide sophisticated control over the printing process, allowing you to optimize print quality, reduce material usage, and achieve better results with complex geometries. This guide focuses on practical usage and real-world benefits rather than just listing parameters.
 
-## Adaptive Slicing
+## When to Use Advanced Slicing
 
-### Overview
-Adaptive slicing automatically adjusts layer thickness based on model geometry, providing optimal resolution where needed while maintaining efficiency in simpler areas.
+Advanced slicing features are most beneficial when:
+- **Printing complex models** with varying detail levels
+- **Optimizing for specific materials** that need special handling
+- **Reducing material costs** through intelligent hollowing
+- **Improving surface quality** on curved or detailed surfaces
+- **Saving time** on large prints with simple areas
 
-### Configuration
-- **Adapt Slicing**: Enable/disable adaptive slicing (0=disabled, 1=enabled)
-- **Adapt Slicing Min**: Minimum layer thickness in millimeters
-- **Adapt Slicing Max**: Maximum layer thickness in millimeters
+## Adaptive Slicing: Smart Layer Thickness
 
-### Benefits
-- **Quality Improvement**: Better detail in complex areas
-- **Time Reduction**: Faster printing in simple areas
-- **Material Efficiency**: Optimized layer thickness
-- **Surface Quality**: Smoother surfaces on curved areas
+### What It Does
+Adaptive slicing automatically adjusts layer thickness based on your model's geometry. Areas with lots of detail get thinner layers for better quality, while simple areas use thicker layers for faster printing.
 
-### Best Practices
-- Start with conservative min/max values
-- Monitor print quality in transition areas
-- Adjust based on model complexity
-- Test with calibration models first
+### Real-World Benefits
+- **Faster Printing**: Simple areas print 2-3x faster
+- **Better Quality**: Complex areas maintain high detail
+- **Material Efficiency**: Optimized layer thickness reduces waste
+- **Smoother Surfaces**: Better quality on curved areas
 
-## Erode Configuration
+### How to Configure
 
-### Overview
-Erode operations create internal cavities and reduce material usage while maintaining structural integrity. This feature is essential for creating lightweight, efficient prints.
+#### Step 1: Enable Adaptive Slicing
+1. Go to **Profiles** → Select your resin profile
+2. Find **Adapt Slicing** and set to **1** (enabled)
+3. Set **Adapt Slicing Min** to **0.025** mm (minimum layer thickness)
+4. Set **Adapt Slicing Max** to **0.1** mm (maximum layer thickness)
 
-### Start Configuration
-- **Erode Start Mode**: Control when erode begins
-  - 0: Immediate after support layers
-  - 1: After specified number of layers
-  - 2: After specified Z height
-- **Erode Start Layer**: Layer number to start erode (mode 1)
-- **Erode Start Height**: Z height in mm to start erode (mode 2)
+#### Step 2: Test and Adjust
+- Start with conservative values (0.025-0.1 mm range)
+- Print a test model with both simple and complex areas
+- Gradually increase the max value if quality remains good
+- Monitor transition areas between thick and thin layers
 
-### Applications
-- **Hollowing**: Create internal cavities
-- **Material Reduction**: Reduce resin consumption
-- **Structural Optimization**: Maintain strength while reducing weight
-- **Support Integration**: Coordinate with support structures
+#### Step 3: Fine-tune for Your Models
+- **Detailed Models**: Use 0.025-0.075 mm range
+- **Simple Models**: Use 0.05-0.1 mm range
+- **Mixed Complexity**: Use 0.025-0.1 mm range
 
-### Configuration Tips
-- Start erode after sufficient base layers
-- Consider model geometry for start timing
-- Balance material savings with structural integrity
-- Test with small prints before full-scale use
+### Troubleshooting Adaptive Slicing
+- **Poor transitions**: Reduce the difference between min/max values
+- **Quality issues**: Lower the maximum layer thickness
+- **Slow printing**: Increase the minimum layer thickness
 
-## Visual Enhancement Features
+## Erode and Hollowing: Material Optimization
 
-### Color Management
-- **Fill Color**: Color for filled/solid areas
-- **Blank Color**: Color for empty/void areas
-- **Color Customization**: RGB color selection
-- **Visual Feedback**: Real-time color preview
+### What It Does
+Erode operations create internal cavities and reduce material usage while maintaining structural integrity. This is perfect for creating lightweight, cost-effective prints.
 
-### Dimming Controls
-- **Dim Amount**: Overall dimming intensity (0-100%)
-- **Dim Wall**: Wall thickness for dimming effects
-- **Dim Border**: Border dimming configuration
-- **Dim Skip**: Skip patterns for dimming
-- **Pixel Diming**: Per-pixel dimming control
+### Real-World Benefits
+- **Cost Savings**: Reduce resin usage by 30-70%
+- **Faster Printing**: Less material means faster curing
+- **Better Quality**: Reduced internal stress and warping
+- **Lightweight Parts**: Ideal for functional prototypes
 
-### Applications
-- **Surface Quality**: Improve surface finish
-- **Detail Enhancement**: Enhance fine features
-- **Visual Appeal**: Create aesthetic effects
-- **Quality Control**: Monitor print progress
+### How to Configure
 
-## Hatching and Pattern Systems
+#### Step 1: Choose When to Start Erode
+1. **Erode Start Mode**: Choose when erode begins
+   - **Mode 0**: Start immediately after support layers
+   - **Mode 1**: Start after X layers (set **Erode Start Layer**)
+   - **Mode 2**: Start after Z height (set **Erode Start Height**)
 
-### Hatching Types
-- **Standard Hatching**: Traditional infill patterns
-- **Advanced Hatching**: Custom pattern generation
-- **Adaptive Hatching**: Geometry-based pattern selection
-- **Custom Hatching**: User-defined patterns
+#### Step 2: Configure Erode Parameters
+- **Erode Start Layer**: Start after 5-10 base layers for stability
+- **Erode Start Height**: Start after 1-2 mm for proper adhesion
+- **Wall Thickness**: Maintain 1-2 mm walls for strength
 
-### Hatching Configuration
-- **Hatching Wall**: Wall thickness for hatching
-- **Hatching Gap**: Gap between hatching lines
-- **Hatching Outer Wall**: Outer wall hatching settings
-- **Hatching Top Cap**: Top layer pattern
-- **Hatching Bottom Cap**: Bottom layer pattern
-- **Hatching Border**: Border area hatching
-- **Hatching Space**: Spacing between elements
-- **Hatching Outer**: Outer area patterns
+#### Step 3: Test Your Configuration
+1. Print a small test model with erode enabled
+2. Check wall thickness and structural integrity
+3. Adjust start timing if needed
+4. Scale up to larger models once satisfied
 
-### Pattern Optimization
-- **Strength vs. Speed**: Balance structural integrity with print time
-- **Material Usage**: Optimize infill density
-- **Surface Quality**: Improve top and bottom surfaces
-- **Support Integration**: Coordinate with support structures
+### Best Practices for Erode
+- **Start conservative**: Begin with 1-2 mm walls
+- **Test thoroughly**: Verify strength before production use
+- **Consider geometry**: Complex models may need thicker walls
+- **Balance savings**: Don't sacrifice too much strength for material savings
 
-## Anti-Aliasing and Quality
+## Anti-Aliasing: Smooth Edge Quality
 
-### Anti-Aliasing Features
-- **Standard Anti-Alias**: Basic edge smoothing
-- **Anti-Alias 3D**: Three-dimensional smoothing
-- **Anti-Alias Threshold**: Sensitivity control
-- **Quality vs. Performance**: Balance smoothness with speed
+### What It Does
+Anti-aliasing smooths the edges of your prints, reducing the "stair-step" effect and creating smoother, more professional-looking surfaces.
 
-### Image Processing
-- **Image Rotate**: Rotate images for optimal orientation
-- **Ignore Mask**: Selective mask processing
-- **Quality Filters**: Apply quality enhancement filters
-- **Resolution Optimization**: Maximize effective resolution
+### Real-World Benefits
+- **Smoother Surfaces**: Professional-quality finish
+- **Better Detail**: Enhanced fine feature reproduction
+- **Reduced Post-Processing**: Less sanding and finishing needed
+- **Improved Aesthetics**: Better visual appeal
 
-## Multi-Cure Operations
+### How to Configure
 
-### Multi-Cure Configuration
-- **Multi Cure Gap**: Gap between multi-cure passes
-- **Cure Passes**: Number of curing passes per layer
-- **Pass Timing**: Timing between passes
-- **Quality Enhancement**: Improve layer adhesion
+#### Step 1: Enable Anti-Aliasing
+1. Go to **Profiles** → Select your resin profile
+2. Find **Anti-Alias 3D** and set to **1** (enabled)
+3. Set **Anti-Alias Threshold** to **0.5** (start with default)
 
-### Applications
-- **High-Quality Prints**: Enhanced surface finish
-- **Difficult Materials**: Better adhesion for challenging resins
-- **Complex Geometries**: Improved detail reproduction
-- **Production Quality**: Professional-grade results
+#### Step 2: Test and Optimize
+- Print a test model with curved surfaces
+- Check edge quality and smoothness
+- Adjust threshold if needed (lower = smoother but slower)
+- Monitor print time impact
 
-## Advanced Base Layer Features
+### When to Use Anti-Aliasing
+- **Curved Surfaces**: Models with lots of curves and organic shapes
+- **High-Quality Prints**: When surface finish is critical
+- **Display Models**: Parts that will be visible
+- **Production Parts**: Professional-quality requirements
 
-### Multi-Stage Exposure
-- **Seed Stage**: Initial exposure dots
-- **Lattice Stage**: Intermediate structure formation
-- **Final Stage**: Complete layer curing
-- **Stage Timing**: Exposure time for each stage
+## Multi-Cure: Enhanced Layer Adhesion
 
-### Configuration
-- **Base Layer Seed Size**: Size of initial exposure dots
-- **Base Layer Seed Spacing**: Spacing between seeds
-- **Base Layer Seed Exposure**: Seed stage exposure time
-- **Base Layer Lattice Exposure**: Lattice stage exposure time
-- **Base Layer Final Exposure**: Final stage exposure time
-- **Base Layer Max Layers**: Maximum layers for advanced base layer
+### What It Does
+Multi-cure performs multiple curing passes per layer, improving adhesion and surface quality, especially for difficult materials or complex geometries.
 
-### Benefits
-- **Warping Reduction**: Minimize print warping
-- **Adhesion Improvement**: Better platform adhesion
-- **Surface Quality**: Smoother base surfaces
-- **Reliability**: More consistent first layers
+### Real-World Benefits
+- **Better Adhesion**: Stronger layer bonding
+- **Improved Quality**: Enhanced surface finish
+- **Material Compatibility**: Better results with challenging resins
+- **Reduced Failures**: More reliable printing
 
-## Ring Exposure System
+### How to Configure
 
-### Overview
-The Ring Exposure System provides single-exposure elephant foot mitigation by creating exposure rings around layer edges.
+#### Step 1: Enable Multi-Cure
+1. Go to **Profiles** → Select your resin profile
+2. Find **Multi Cure Gap** and set to **0.1** mm
+3. Set **Cure Passes** to **2** (start with 2 passes)
 
-### Configuration
-- **Ring Exposure Enabled**: Enable/disable ring exposure
-- **Ring Thickness**: Thickness of exposure ring in mm
-- **Ring Exposure Reduction**: Exposure reduction percentage (0-100%)
-- **Ring Gradient Falloff**: Enable gradient falloff (0=binary, 1=gradient)
-- **Ring Exposure Mode**: Application mode selection
-  - 0: Burn-in layers only
-  - 1: All layers
-  - 2: Selected layers
-- **Ring Max Layer**: Maximum layer for ring exposure (mode 2)
+#### Step 2: Optimize for Your Material
+- **Standard Resins**: 2 passes usually sufficient
+- **Difficult Materials**: Try 3-4 passes
+- **High-Quality Requirements**: 2-3 passes
+- **Fast Printing**: 1-2 passes
 
-### Applications
-- **Elephant Foot Mitigation**: Reduce base layer expansion
-- **Dimensional Accuracy**: Improve print dimensions
-- **Surface Quality**: Better surface finish
-- **Support Integration**: Coordinate with support structures
+### Best Practices for Multi-Cure
+- **Start with 2 passes**: Most materials benefit from this
+- **Monitor print time**: Each pass adds time per layer
+- **Test with your resin**: Different materials respond differently
+- **Balance quality vs. speed**: Find the sweet spot for your needs
 
-## EFME (Elephant Foot Mitigation Enhanced)
+## Ring Exposure: Elephant Foot Prevention
 
-### Overview
-Extended EFME provides advanced elephant foot mitigation with multiple application modes and continuous operation options.
+### What It Does
+Ring Exposure creates exposure rings around layer edges to prevent elephant foot (base layer expansion), improving dimensional accuracy and surface quality.
 
-### Configuration
-- **EFME Mode**: Application mode selection
-  - 0: Burn-in layers only
-  - 1: All layers
-  - 2: Selected layers
-- **EFME Max Layer**: Maximum layer for EFME application
-- **EFME Continuous**: Continuous/near-continuous timing
-- **EFME Guard Band**: Guard band thickness in mm
+### Real-World Benefits
+- **Accurate Dimensions**: Better dimensional precision
+- **Smoother Surfaces**: Reduced base layer roughness
+- **Better Fit**: Parts fit together more precisely
+- **Professional Quality**: Improved overall appearance
 
-### Advanced Features
-- **Continuous Operation**: Near-continuous exposure timing
-- **Guard Band Protection**: Protective exposure zones
-- **Selective Application**: Layer-specific application
-- **Quality Optimization**: Enhanced mitigation effectiveness
+### How to Configure
 
-## Resolution and Scaling
+#### Step 1: Enable Ring Exposure
+1. Go to **Profiles** → Select your resin profile
+2. Find **Ring Exposure Enabled** and set to **1**
+3. Set **Ring Thickness** to **0.5** mm
+4. Set **Ring Exposure Reduction** to **50%**
 
-### Resolution Control
-- **XY Resolution**: X and Y axis resolution control
-- **Y Resolution**: Y-axis specific resolution
-- **Z Resolution Percentage**: Z-axis resolution scaling
-- **Dynamic Resolution**: Adaptive resolution adjustment
+#### Step 2: Choose Application Mode
+- **Mode 0**: Burn-in layers only (recommended for most users)
+- **Mode 1**: All layers (for maximum quality)
+- **Mode 2**: Selected layers (for custom control)
 
-### Shrinkage Compensation
-- **X Scale**: X-axis scaling for resin shrinkage
-- **Y Scale**: Y-axis scaling for resin shrinkage
-- **Z Scale**: Z-axis scaling for resin shrinkage
-- **Material-Specific Scaling**: Resin-dependent compensation
+### When to Use Ring Exposure
+- **Precision Parts**: When dimensional accuracy is critical
+- **Assembly Models**: Parts that need to fit together
+- **Professional Prints**: High-quality requirements
+- **All Prints**: Generally beneficial for most applications
 
-### Calibration
-- **Resolution Calibration**: Accurate resolution measurement
-- **Scale Calibration**: Precise scaling factors
-- **Material Testing**: Resin-specific calibration
-- **Quality Verification**: Print quality validation
+## Practical Configuration Examples
 
-## Quality Optimization
+### Example 1: High-Quality Display Model
+```
+Adapt Slicing: Enabled (0.025-0.075 mm)
+Anti-Aliasing: Enabled (threshold 0.3)
+Multi-Cure: 3 passes
+Ring Exposure: Enabled (burn-in layers only)
+Erode: Disabled (for solid quality)
+```
 
-### Print Quality Factors
-- **Layer Adhesion**: Ensure proper layer bonding
-- **Surface Finish**: Optimize surface quality
-- **Dimensional Accuracy**: Maintain print dimensions
-- **Detail Reproduction**: Preserve fine features
+### Example 2: Fast Functional Prototype
+```
+Adapt Slicing: Enabled (0.05-0.1 mm)
+Anti-Aliasing: Disabled (for speed)
+Multi-Cure: 2 passes
+Ring Exposure: Enabled (burn-in layers only)
+Erode: Enabled (start after 5 layers)
+```
 
-### Optimization Techniques
-- **Parameter Tuning**: Fine-tune slicing parameters
-- **Material Testing**: Test with different resins
-- **Geometry Analysis**: Analyze model complexity
-- **Quality Monitoring**: Track print quality metrics
+### Example 3: Material-Efficient Production
+```
+Adapt Slicing: Enabled (0.025-0.1 mm)
+Anti-Aliasing: Enabled (threshold 0.5)
+Multi-Cure: 2 passes
+Ring Exposure: Enabled (all layers)
+Erode: Enabled (start after 3 layers, 1.5 mm walls)
+```
 
-## Best Practices
+## Troubleshooting Common Issues
 
-### Configuration Strategy
-- Start with conservative settings
-- Test with calibration models
-- Document successful configurations
-- Gradually optimize parameters
+### Poor Surface Quality
+- **Check anti-aliasing settings**: Ensure it's enabled and properly configured
+- **Verify adaptive slicing**: Make sure layer transitions aren't too dramatic
+- **Review multi-cure**: Increase passes for difficult materials
 
-### Quality Control
-- Monitor print quality consistently
-- Use quality assessment tools
-- Track parameter changes
-- Maintain quality standards
+### Print Failures
+- **Check erode settings**: Ensure walls aren't too thin
+- **Verify start timing**: Don't start erode too early
+- **Review material settings**: Ensure resin profile is correct
 
-### Performance Optimization
-- Balance quality with speed
-- Optimize for specific materials
-- Consider production requirements
-- Monitor system performance
+### Slow Printing
+- **Optimize adaptive slicing**: Increase minimum layer thickness
+- **Reduce multi-cure passes**: Use fewer passes if quality allows
+- **Check anti-aliasing**: Higher threshold values are faster
 
-## Troubleshooting
+## Next Steps
 
-### Common Issues
-- **Poor Surface Quality**: Check anti-aliasing and dimming settings
-- **Layer Adhesion Problems**: Verify multi-cure and base layer settings
-- **Dimensional Inaccuracy**: Calibrate resolution and scaling
-- **Print Failures**: Review adaptive slicing parameters
-
-### Debug Tools
-- **Layer Preview**: Examine individual layers
-- **Quality Metrics**: Monitor print quality
-- **Parameter Logs**: Track setting changes
-- **Performance Monitoring**: Monitor system performance
+Once you're comfortable with these advanced features:
+- **[Profile Management]({{<ref "profiles">}})** - Create optimized profiles for different materials
+- **[Machine Configuration]({{<ref "machine-configuration">}})** - Fine-tune hardware settings
+- **[Print Quality]({{<ref "print-quality">}})** - Monitor and improve print results
+- **[Elephant Foot Mitigation]({{<ref "elephant-foot">}})** - Advanced techniques for perfect base layers
 
 ## Related Topics
 
-- [Profile Management]({{<ref "profiles">}})
-- [Machine Configuration]({{<ref "machine-configuration">}})
-- [Print Quality]({{<ref "print-quality">}})
-- [Elephant Foot Mitigation]({{<ref "elephant-foot">}})
-- [Dimming]({{<ref "dimming">}})
-- [Erode]({{<ref "erode">}})
-- [Hollowing]({{<ref "hollowing">}})
+- [Profile Management]({{<ref "profiles">}}) - Configure resin-specific settings
+- [Machine Configuration]({{<ref "machine-configuration">}}) - Hardware setup and calibration
+- [Print Quality]({{<ref "print-quality">}}) - Monitor and improve results
+- [Elephant Foot Mitigation]({{<ref "elephant-foot">}}) - Advanced base layer techniques

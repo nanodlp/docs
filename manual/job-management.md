@@ -12,65 +12,71 @@ toc: true
 
 ## Overview
 
-Job management in NanoDLP encompasses all aspects of creating, organizing, and controlling 3D printing jobs. This includes job creation, print control, workflow management, and monitoring for efficient 3D printing operations.
+Job management in NanoDLP encompasses all aspects of creating, organizing, and controlling 3D printing jobs. This guide focuses on practical workflows and common tasks rather than just listing features. Whether you're printing your first model or managing a production workflow, these step-by-step instructions will help you succeed.
 
-## Job Creation and Setup
+## Your First Print: Complete Workflow
 
-### Job Creation Methods
-- **File Upload**: Upload 3D models to create jobs
-- **USB File Access**: Direct access to files on mounted USB devices
-- **Job Cloning**: Clone existing jobs with modifications
-- **Job Import**: Import jobs from external sources
-- **Template Jobs**: Use predefined job templates
+### Step 1: Prepare Your 3D Model
+1. **File Requirements**:
+   - **Supported formats**: STL, 3MF, OBJ, SLC, NSLICE, SVG
+   - **File size**: Keep under 100MB for best performance
+   - **Model orientation**: Ensure proper orientation for printing
+   - **Supports**: Add supports if needed (many slicers can do this)
 
-### Supported File Formats
-- **3D Models**: STL, 3MF, OBJ, SLC, NSLICE, SVG
-- **Sliced Files**: NanoDLP, CWS
-- **Archives**: ZIP files containing PNG layers
-- **Size Limits**: Configurable file size restrictions
+2. **Model Preparation**:
+   - **Check for errors**: Use a 3D modeling tool to verify mesh integrity
+   - **Optimize size**: Scale to your desired dimensions
+   - **Consider supports**: Plan where supports will be needed
 
-### Job Configuration
-- **Profile Selection**: Choose appropriate print profiles
-- **Parameter Settings**: Configure print parameters
-- **Support Generation**: Set up support structures
-- **Quality Settings**: Define quality requirements
+### Step 2: Upload and Create Job
+1. **Access the Plates Page**:
+   - Go to **Plates** in the main menu
+   - Click **Add Plate** to create a new job
 
-### Job Validation
-- **File Integrity**: Verify uploaded files
-- **Parameter Validation**: Check parameter compatibility
-- **Resource Requirements**: Assess resource needs
-- **Pre-print Checks**: Validate job before printing
+2. **Upload Your Model**:
+   - Drag and drop your file or click to browse
+   - Wait for upload to complete
+   - Verify the model appears correctly
 
-## Print Control Operations
+3. **Configure Basic Settings**:
+   - **Select Profile**: Choose the appropriate resin profile
+   - **Layer Height**: Set your desired resolution (0.025-0.1 mm)
+   - **Supports**: Enable if your model needs them
 
-### Basic Print Control
-- **Start Printing**: Begin print operations
-- **Stop Printing**: Halt print operations
-- **Pause Printing**: Temporarily pause prints
-- **Resume Printing**: Continue paused prints
+### Step 3: Slice and Prepare
+1. **Start Slicing**:
+   - Click **Slice** to begin processing
+   - Monitor progress in the job status
+   - Wait for completion (time varies with model complexity)
 
-### Advanced Print Control
-- **Force Stop**: Emergency stop operations
-- **Print After Slice**: Start printing after slicing completion
-- **Resume from Specific Point**: Resume from specific layers
-- **Print Queue Management**: Manage multiple print jobs
+2. **Review Results**:
+   - Check layer count and estimated print time
+   - Preview layers to ensure quality
+   - Verify support placement if applicable
 
-### Print Monitoring
-- **Real-time Status**: Monitor print progress
-- **Layer Tracking**: Track current layer progress
-- **Time Monitoring**: Monitor elapsed and remaining time
-- **Quality Monitoring**: Monitor print quality during operation
+### Step 4: Start Printing
+1. **Pre-Print Checklist**:
+   - Resin level is adequate
+   - Build platform is clean and level
+   - FEP film is in good condition
+   - Printer is properly calibrated
 
-## Job Organization and Management
+2. **Begin Print**:
+   - Click **Print** to start
+   - Monitor first few layers carefully
+   - Check for proper adhesion and layer formation
 
-### Job Categories
-- **Active Jobs**: Currently queued or printing jobs
+## Daily Job Management
+
+### Managing Multiple Jobs
+
+#### Job Organization
+- **Active Jobs**: Currently printing or queued
 - **Completed Jobs**: Successfully finished prints
 - **Failed Jobs**: Jobs that encountered errors
-- **Archived Jobs**: Long-term storage jobs
-- **Deleted Jobs**: Jobs marked for deletion
+- **Archived Jobs**: Long-term storage
 
-### Job Status Tracking
+#### Job Status Tracking
 - **Pending**: Waiting to be processed
 - **Slicing**: Currently being sliced
 - **Queued**: Ready for printing
@@ -79,210 +85,170 @@ Job management in NanoDLP encompasses all aspects of creating, organizing, and c
 - **Completed**: Successfully finished
 - **Failed**: Encountered errors
 
-### Job History
-- **Print Records**: Complete print history
-- **Performance Metrics**: Print time and quality data
-- **Error Logs**: Detailed error information
-- **Success Rates**: Track successful vs. failed prints
+### Common Daily Tasks
+
+#### Starting a New Print
+1. **Check Printer Status**: Ensure printer is ready
+2. **Upload Model**: Add new 3D model
+3. **Select Profile**: Choose appropriate resin profile
+4. **Slice Model**: Process for printing
+5. **Start Print**: Begin printing operation
+
+#### Monitoring Active Prints
+1. **Check Progress**: Monitor layer completion
+2. **Verify Quality**: Look for layer adhesion issues
+3. **Track Time**: Monitor elapsed and remaining time
+4. **Handle Issues**: Pause or stop if problems arise
+
+#### Managing Completed Jobs
+1. **Review Results**: Check print quality
+2. **Document Settings**: Note successful configurations
+3. **Clean Up**: Remove completed jobs or archive them
+4. **Plan Next**: Prepare for upcoming prints
 
 ## Advanced Job Features
 
-### Job Cloning and Duplication
-- **Exact Cloning**: Create identical copies
-- **Modified Cloning**: Clone with parameter changes
-- **Batch Cloning**: Create multiple similar jobs
-- **Template Management**: Use jobs as templates
+### Job Cloning and Templates
 
-### Job Restoration
-- **Deleted Job Recovery**: Restore accidentally deleted jobs
-- **Backup Restoration**: Restore from backup files
+#### When to Use Cloning
+- **Similar Models**: Multiple versions of the same design
+- **Batch Production**: Multiple copies of the same model
+- **Parameter Testing**: Try different settings on the same model
+- **Team Workflows**: Share successful configurations
 
+#### How to Clone Jobs
+1. **Select Source Job**: Choose the job to clone
+2. **Click Clone**: Use the clone function
+3. **Modify Settings**: Adjust parameters as needed
+4. **Save New Job**: Create the cloned version
 
-### Job Repair and Maintenance
-- **File Repair**: Fix corrupted job files
-- **Parameter Correction**: Fix incorrect parameters
-- **Support Regeneration**: Regenerate support structures
-- **Quality Optimization**: Optimize job settings
+#### Creating Templates
+1. **Start with Success**: Use a working job as a base
+2. **Remove Specifics**: Clear model-specific settings
+3. **Add Documentation**: Include usage notes
+4. **Test Thoroughly**: Verify template works correctly
 
-## Export and Compatibility
+### Batch Operations
 
-### Supported Export Formats
-NanoDLP supports export to 20+ industry-standard formats:
+#### Managing Multiple Jobs
+1. **Queue Management**: Organize print order
+2. **Priority Setting**: Set job priorities
+3. **Resource Planning**: Plan resin and time requirements
+4. **Quality Control**: Monitor multiple prints simultaneously
 
-#### **Resin 3D Printing Formats**
-- **NanoDLP (.nanodlp)**: Native format with full feature support
-- **CBDDLP (.cbddlp)**: Chitubox format compatibility
-- **Photon (.photon)**: Anycubic Photon format
-- **CTB (.ctb)**: Chitubox binary format
-- **CWS (.cws)**: Chitubox workspace format
+#### Production Workflows
+1. **Standardized Setup**: Use consistent profiles and settings
+2. **Quality Checks**: Regular quality verification
+3. **Efficiency Optimization**: Minimize setup time between jobs
+4. **Documentation**: Track successful configurations
 
-#### **Professional Formats**
-- **SL1 (.sl1)**: Prusa SL1 format
-- **UVJ (.uvj)**: UVTools format
-- **ZCODEX (.zcodex)**: Zortrax format
-- **PWS (.pws)**: Prusa workspace format
-- **PW0 (.pw0)**: Prusa format variant
+## Troubleshooting Common Issues
 
-#### **Archive and Compression**
-- **CZIP (.czip)**: Compressed archive format
-- **ZIP (.zip)**: Standard archive with PNG layers
+### Print Failures
 
-#### **Specialized Formats**
-- **FDG (.fdg)**: Formlabs format
-- **LGS (.lgs, .lgs30)**: Layer format variants
-- **PHZ (.phz)**: Specialized format support
+#### Layer Adhesion Problems
+**Symptoms**: Layers separating, weak prints
+**Solutions**:
+- Check resin profile settings (cure time, lift speed)
+- Verify resin temperature and viscosity
+- Ensure proper support configuration
+- Check layer height settings
 
-### Export Features
-- **Quality Preservation**: Maintain slicing quality across formats
-- **Batch Export**: Export to multiple formats simultaneously
-- **Format Validation**: Ensure compatibility with target printers
-- **Metadata Preservation**: Maintain job settings and parameters
+#### Support Issues
+**Symptoms**: Weak supports, difficult removal
+**Solutions**:
+- Increase support cure time
+- Check support density and thickness
+- Verify support placement and orientation
+- Consider different support strategies
 
-## Advanced Job Configuration
+#### Print Stuck to FEP
+**Symptoms**: Print adheres to FEP instead of build platform
+**Solutions**:
+- Check build platform leveling
+- Verify first layer exposure settings
+- Ensure proper support configuration
+- Check resin viscosity and temperature
 
-### Auto-Centering Options
-- **Center Pieces**: Automatically center all objects on the build platform
-- **Center Origin**: Center based on model origin point
-- **Disable**: No automatic centering applied
+### System Issues
 
-### Adaptive Layer Thickness
-- **Multiple Thickness**: Configure different layer heights at specific Z positions
-- **Format**: `height:thickness,mm:micron` (e.g., "10:0.05,20:0.1")
-- **Dynamic Adjustment**: Automatic layer height optimization based on geometry
+#### Slicing Problems
+**Symptoms**: Slicing fails or produces errors
+**Solutions**:
+- Check file format and integrity
+- Verify model mesh quality
+- Reduce file size if too large
+- Check system resources
 
-### Multi-Cure Settings
-- **Multiple Cure Times**: Set different exposure times for the same layer
-- **Format**: Comma-separated values in seconds
-- **Applications**: Complex geometries, difficult materials, quality enhancement
+#### Job Management Issues
+**Symptoms**: Jobs disappear or can't be managed
+**Solutions**:
+- Check file permissions
+- Verify storage space
+- Restart the system if needed
+- Check for corrupted job files
 
-### Advanced Positioning
-- **Offset Control**: Adjust lowest point for slicing (in mm)
-- **Stop Layers**: Define specific layers to pause printing
-- **Low Quality Layers**: Configure reduced quality for specific layer ranges
-
-### Custom Masking
-- **Job-Specific Masks**: Override global mask files per job
-- **Mask Intensity Control**: Adjust mask effect percentage (0-100%)
-- **Format Support**: PNG mask files for custom exposure patterns
-
-### Layer Manipulation
-- **Image Rotation**: Rotate layers 90° or maintain profile settings
-- **Custom Orientation**: Override profile rotation settings
-- **Layer-Specific Adjustments**: Fine-tune individual layer properties
-
-## Workflow Management
-
-### Print Workflows
-- **Standard Workflow**: Basic print process
-- **Advanced Workflow**: Complex multi-step processes
-- **Batch Workflow**: Multiple job processing
-- **Custom Workflow**: User-defined workflows
-
-### Quality Control
-- **Pre-Print Checks**: Validate settings before printing
-- **In-Process Monitoring**: Monitor print quality
-- **Post-Print Inspection**: Quality assessment
-- **Quality Metrics**: Track quality over time
-
-### Optimization
-- **Parameter Tuning**: Optimize print parameters
-- **Material Optimization**: Optimize for specific materials
-- **Speed Optimization**: Balance quality and speed
-- **Support Optimization**: Optimize support structures
-
-## Job Analytics and Monitoring
-
-### Performance Metrics
-- **Print Time**: Track printing duration
-- **Material Usage**: Monitor material consumption
-- **Success Rate**: Track successful prints
-- **Quality Scores**: Assess print quality
-
-### Cost Analysis
-- **Material Costs**: Calculate material expenses
-- **Time Costs**: Factor in printing time
-- **Energy Costs**: Monitor power consumption
-- **Total Cost**: Complete cost analysis
-
-### Trend Analysis
-- **Performance Trends**: Track improvements over time
-- **Quality Trends**: Monitor quality changes
-- **Efficiency Trends**: Track efficiency improvements
-- **Cost Trends**: Monitor cost changes
-
-## Advanced Features
-
-### Multi-Job Printing
-- **Batch Processing**: Process multiple jobs simultaneously
-- **Queue Management**: Manage print queues
-- **Priority Setting**: Set print priorities
-- **Resource Allocation**: Allocate resources efficiently
-
-### Remote Management
-- **Remote Job Creation**: Create jobs remotely
-- **Remote Monitoring**: Monitor prints remotely
-- **Remote Control**: Control prints remotely
-- **Mobile Access**: Access via mobile devices
-
-### Integration
-- **External Slicers**: Integrate with external slicing software
-- **Cloud Services**: Connect to cloud storage
-- **Design Software**: Integrate with CAD software
-- **Workflow Systems**: Connect to external workflow systems
-
-## Job Control API
-
-### REST API Endpoints
-- **Job Creation**: Create new jobs via API
-- **Job Control**: Control job operations via API
-- **Job Status**: Get job status information
-- **Job Management**: Manage job lifecycle via API
-
-### Automation
-- **Scripted Job Creation**: Automate job creation
-- **Batch Job Processing**: Process multiple jobs automatically
-- **Scheduled Jobs**: Schedule jobs for specific times
-- **Conditional Job Execution**: Execute jobs based on conditions
-
-## Best Practices
+## Best Practices for Success
 
 ### Job Preparation
-- **Model Optimization**: Optimize 3D models before job creation
-- **Parameter Validation**: Validate all parameters
-- **Support Verification**: Verify support structures
-- **Quality Pre-check**: Check quality settings before printing
+1. **Plan Ahead**: Organize jobs and materials in advance
+2. **Test First**: Use small models to test new configurations
+3. **Document Everything**: Keep notes on successful settings
+4. **Quality First**: Don't sacrifice quality for speed
 
-### Organization
-- **Naming Conventions**: Use consistent job naming
-- **Folder Structure**: Organize jobs logically
-- **Version Control**: Track job versions
-- **Backup Strategy**: Implement backup procedures
+### Workflow Optimization
+1. **Standardize Processes**: Use consistent workflows
+2. **Batch Similar Jobs**: Group similar prints together
+3. **Monitor Resources**: Track resin usage and time
+4. **Regular Maintenance**: Keep system clean and calibrated
 
-### Quality Assurance
-- **Pre-Print Testing**: Test settings before full prints
-- **Parameter Validation**: Validate all parameters
-- **Support Verification**: Verify support structures
-- **Quality Monitoring**: Monitor print quality continuously
+### Quality Control
+1. **Check First Layers**: Monitor initial layer formation
+2. **Regular Inspection**: Check prints during operation
+3. **Post-Print Review**: Evaluate final quality
+4. **Continuous Improvement**: Learn from each print
 
-## Troubleshooting
+## File Management
 
-### Common Issues
-- **Job Creation Failures**: Resolve job creation problems
-- **Print Failures**: Fix print problems
-- **Quality Issues**: Address quality problems
-- **Workflow Errors**: Resolve workflow issues
+### Supported Formats
+- **STL**: Most common, widely supported
+- **3MF**: Modern format with better metadata
+- **OBJ**: Good for complex geometries
+- **SLC**: Sliced format for direct printing
+- **NSLICE**: NanoDLP-specific format
+- **SVG**: 2D vector format for special applications
 
-### Error Resolution
-- **Error Analysis**: Analyze error messages
-- **Problem Identification**: Identify root causes
-- **Solution Implementation**: Apply solutions
-- **Prevention Measures**: Prevent future issues
+### File Organization
+1. **Clear Naming**: Use descriptive file names
+2. **Folder Structure**: Organize by project or type
+3. **Version Control**: Keep track of file versions
+4. **Backup Strategy**: Maintain file backups
+
+## USB and External Storage
+
+### Using USB Storage
+1. **Mount USB Device**: Insert and mount USB drive
+2. **Access Files**: Browse USB contents in NanoDLP
+3. **Copy to Local**: Transfer files to local storage
+4. **Manage Storage**: Organize and clean up files
+
+### Best Practices
+- **Format USB**: Use FAT32 for best compatibility
+- **File Organization**: Keep files organized on USB
+- **Regular Backup**: Don't rely solely on USB storage
+- **Virus Protection**: Scan USB devices before use
+
+## Next Steps
+
+Once you're comfortable with job management:
+- **[Profile Management]({{<ref "profiles">}})** - Optimize resin settings for better results
+- **[Advanced Slicing]({{<ref "advanced-slicing">}})** - Fine-tune slicing for optimal quality
+- **[Print Quality]({{<ref "print-quality">}})** - Monitor and improve print results
+- **[Hardware Management]({{<ref "hardware-management">}})** - Maintain and optimize your printer
 
 ## Related Topics
 
-- **[Job Control]({{<ref "job">}})** - Basic job control operations
-- **[Web Interface]({{<ref "web-interface">}})** - Web interface usage
-- **[API Reference]({{<ref "api-reference">}})** - Programmatic access
-- **[Print Quality]({{<ref "print-quality">}})** - Quality optimization
-- **[Calibration Jobs]({{<ref "calibration-job">}})** - Calibration procedures
-- **[Plate Management]({{<ref "plate-management">}})** - File and plate operations
+- [Profile Management]({{<ref "profiles">}}) - Configure resin-specific settings
+- [Advanced Slicing]({{<ref "advanced-slicing">}}) - Fine-tune slicing parameters
+- [Print Quality]({{<ref "print-quality">}}) - Monitor and improve results
+- [Hardware Management]({{<ref "hardware-management">}}) - Maintain your printer

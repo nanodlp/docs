@@ -12,222 +12,66 @@ toc: true
 
 ## Overview
 
-NanoDLP provides a comprehensive web-based interface for controlling your 3D printer, managing print jobs, and configuring system settings. The web interface is accessible from any device on your network and provides both user-friendly controls and advanced API endpoints.
+NanoDLP’s web interface is where you perform day‑to‑day work: upload files, slice, start/stop prints, and monitor the machine. This page shows how to complete the most common tasks quickly.
 
-## Core Interface
+## Access the interface
 
-### Home Page
-- **URL**: `/`
-- **Access**: Guest (public)
-- **Features**: 
-  - Printer status overview
-  - Current print progress
-  - Quick access to common functions
-  - System information display
+1. Find your printer’s IP on your network UI or screen.
+2. Open a browser and go to: `http://<printer-ip>/`.
+3. If authentication is enabled, sign in with your user credentials.
 
-### Layer Preview
-- **URL**: `/layer/preview/{plateID}/{layerID}`
-- **Access**: Guest (public)
-- **Features**:
-  - Individual layer visualization
-  - Print preview for specific layers
-  - Quality assessment tools
+## Quick start: from model to print
 
-## Slicing and File Management
+1. Upload a model
+   - Go to Plates or Jobs and choose Add/Upload.
+   - Select your file (STL, 3MF, OBJ, ZIP with PNGs, etc.).
+2. Pick a profile
+   - Choose a resin profile appropriate for your material. If unsure, start with your manufacturer’s recommendation and fine‑tune later. See [Profile Management]({{<ref "profiles">}}).
+3. Slice
+   - Slice locally (server), in the browser ([Web‑based Slicing]({{<ref "web-based-slicing">}})), or remotely.
+4. Start printing
+   - Open the created plate/job and click Print. Confirm when prompted.
+5. Monitor progress
+   - Home shows layer, ETA, and status. Use Pause/Resume/Stop as needed.
 
-### Plate Management
-- **Add New Plate**: Upload and prepare 3D models for printing
-- **Plate Regeneration**: Regenerate plates with new settings
-- **Plate Operations**: View, edit, and manage existing plates
-- **Advanced Plates**: Manufacturer-level plate management
+## Everyday tasks
 
-### Slicing Operations
-- **Slicer Status**: Monitor current slicing progress
-- **Remote Slicing**: Use external slicing services
-- **Calibration**: Add calibration files for Athena system
-- **Time Estimation**: Calculate print time and material usage
+### Upload or import
+- Upload from your computer: Add/Upload in Plates or Jobs.
+- From USB: Insert the drive and open USB in the sidebar to select files.
 
-### File Operations
-- **Upload Methods**: Web interface and REST API uploads
-- **File Formats**: Support for various 3D model formats
-- **Preview Generation**: Automatic preview image creation
-- **File Organization**: Structured file management system
+### Re‑slice after changes
+- If you change profile parameters that affect slicing, click Regenerate on the plate to re‑apply settings. See indicators in [Settings Overview]({{<ref "settings">}}).
 
-## Printer Control
+### Pause, resume, stop
+- Pause: Safely pauses after the current exposure/move.
+- Resume: Continues the job.
+- Stop/Force stop: Stops immediately; use with caution.
 
-### Power Management
-- **Printer On/Off**: Control printer power state
-- **Auto Shutdown**: Configure automatic shutdown behavior
-- **Restart Options**: Restart printer or specific components
+### Estimate time/material
+- Use Estimate on a profile/height or view estimates on the job page after slicing.
 
-### HMI Control
-- **HMI Start/Stop**: Control Human Machine Interface
-- **HMI Restart**: Restart HMI system
-- **HMI Status**: Monitor HMI operation
+### Backup and restore
+- Create a backup from Setup/Backup. Restore from the same section. See [Guide → Backup]({{<ref "guide/backup">}}).
 
-### System Operations
-- **NanoDLP Reload**: Reload application without restart
-- **System Restore**: Restore default settings
-- **Backup/Restore**: Create and restore system backups
-- **Statistics Reset**: Clear system statistics
+## Where to find things
 
-### Upgrade Management
-- **NanoDLP Upgrades**: Online and offline upgrade options
-- **HMI Upgrades**: Display interface updates
-- **Version Management**: Track and manage software versions
-
-## Settings and Configuration
-
-### Machine Settings
-- **PI Configuration**: Raspberry Pi specific settings
-- **Setup Management**: Core system configuration
-- **Custom Inputs**: User-defined configuration values
-- **Timezone Settings**: System time configuration
-
-### Hardware Configuration
-- **WiFi Management**: Network configuration and management
-- **Country Settings**: Regulatory compliance settings
-- **Custom Sound**: Audio notification configuration
-- **Custom Consumables**: Material tracking and management
-
-### Advanced Settings
-- **Manufacturer Access**: High-level configuration options
-- **System Integration**: External system connections
-- **Performance Tuning**: System optimization settings
-
-## Hardware Management
-
-### Debug Operations
-- **Debug Continue**: Resume debug operations
-- **System Monitoring**: Real-time system status
-- **Error Logging**: Comprehensive error tracking
-
-### Firmware Management
-- **Klipper Upload**: Upload Klipper firmware
-- **RAMPS Connection**: Manage RAMPS board connections
-- **Board Communication**: Monitor board status
-
-### Network Management
-- **WiFi Configuration**: Set up wireless networks
-- **Network Status**: Monitor connection health
-- **USB Management**: Handle USB storage devices
-
-### Terminal Interface
-- **Terminal Access**: Command-line interface
-- **G-code Sending**: Manual G-code execution
-- **Real-time Monitoring**: Live system feedback
-
-## File and Storage
-
-### USB Storage
-- **USB File Browser**: Navigate USB storage devices
-- **File Preview**: Preview files before processing
-- **File Management**: Organize and manage files
-
-### Database Access
-- **Database Files**: Access system database files
-- **Configuration Export**: Export system settings
-- **Data Backup**: Create data backups
-
-## API and Integration
-
-### REST API
-- **JSON Endpoints**: Machine-readable data access
-- **Authentication**: Bearer token security
-- **Response Formats**: Structured data responses
-
-### Remote Integration
-- **Remote Slicing**: External slicing service integration
-- **External Systems**: Connect to other software
-- **Webhooks**: Event-driven notifications
-
-## Security and Permissions
-
-### Access Levels
-- **Guest Access**: Public information and basic functions
-- **User Access**: Standard user operations
-- **Admin Access**: System administration functions
-- **Manufacturer Access**: High-level configuration
-
-### Authentication
-- **Bearer Tokens**: Secure API access
-- **Session Management**: User session handling
-- **Permission Control**: Granular access control
-
-## Monitoring and Analytics
-
-### System Status
-- **CPU Usage**: Processor utilization monitoring
-- **Memory Usage**: RAM usage tracking
-- **Disk Usage**: Storage space monitoring
-- **Temperature**: System temperature monitoring
-
-### Print Analytics
-- **Print Statistics**: Comprehensive print data
-- **Quality Metrics**: Print quality analysis
-- **Performance Tracking**: System performance monitoring
-
-### Real-time Monitoring
-- **Live Updates**: Real-time status updates
-- **Progress Tracking**: Print progress monitoring
-- **Error Reporting**: Immediate error notifications
-
-## User Experience Features
-
-### Responsive Design
-- **Mobile Support**: Mobile-optimized interface
-- **Touch Interface**: Touch-friendly controls
-- **Responsive Layout**: Adaptive screen layouts
-
-### Accessibility
-- **Keyboard Navigation**: Full keyboard support
-- **Screen Reader Support**: Accessibility compliance
-- **High Contrast**: Visual accessibility options
-
-### Customization
-- **Theme Selection**: Multiple interface themes
-- **Language Support**: Multi-language interface
-- **Custom Layouts**: User-defined interface layouts
+- Home: Live status, current job, quick actions.
+- Plates/Jobs: Upload, manage, regenerate, print.
+- Profiles: Create/tune resin profiles. See [Profile Management]({{<ref "profiles">}}).
+- Machine/Setup: Pins, motors, display, network, and advanced options. See [Machine Configuration]({{<ref "machine-configuration">}}).
+- Terminal: Send G‑code and view logs.
+- WiFi: Configure network. See [Raspberry Pi display/WiFi]({{<ref "guide/raspberry-pi-display">}}).
 
 ## Troubleshooting
 
-### Common Issues
-- **Connection Problems**: Network connectivity issues
-- **Authentication Errors**: Login and permission problems
-- **Performance Issues**: Slow interface response
-- **Display Problems**: Visual interface issues
+- Can’t reach the UI: Verify IP, network, and that NanoDLP service is running. Try another browser.
+- Upload fails: Check file size/format. For large files, prefer server or remote slicing.
+- Slicing stuck: Review logs on Terminal; try Web‑based Slicing or Remote Slicing.
+- Print won’t start: Ensure no active job, doors/sensors OK (if enabled), and sufficient free space.
 
-### Debug Tools
-- **Browser Console**: Client-side debugging
-- **Network Monitor**: Network request analysis
-- **Error Logs**: Detailed error information
-- **System Logs**: Comprehensive system logging
+## Next steps
 
-## Best Practices
-
-### Interface Usage
-- Use modern web browsers for best compatibility
-- Keep the interface open during printing for monitoring
-- Use keyboard shortcuts for efficient navigation
-- Bookmark frequently used pages
-
-### Security
-- Use strong passwords for admin accounts
-- Regularly update access tokens
-- Monitor access logs for suspicious activity
-- Restrict network access when possible
-
-### Performance
-- Close unused browser tabs
-- Clear browser cache regularly
-- Use wired connections for critical operations
-- Monitor system resources during heavy use
-
-## Related Topics
-
-- [Machine Configuration]({{<ref "machine-configuration">}})
-- [Profile Management]({{<ref "profiles">}})
-- [Hardware Setup]({{<ref "hardware">}})
-- [Settings Overview]({{<ref "settings">}})
-- [WiFi Configuration]({{<ref "guide/raspberry-pi-display">}})
-- [Backup and Restore]({{<ref "guide/backup">}})
+- Configure your printer hardware: [Machine Configuration]({{<ref "machine-configuration">}})
+- Create a working resin profile: [Profile Management]({{<ref "profiles">}})
+- Slice in the browser: [Web‑based Slicing]({{<ref "web-based-slicing">}})

@@ -12,97 +12,91 @@ images: []
 
 NanoDLP is a comprehensive 3D printer management system that provides advanced slicing, printing control, and hardware management capabilities. This manual covers all aspects of the system from basic setup to advanced configuration.
 
-## Getting Started
+## Quick Start Guide
 
-- **[Settings Overview]({{<ref "settings">}})** - Overview of NanoDLP configuration options
-- **[Hardware Setup]({{<ref "hardware">}})** - Hardware installation and configuration
-- **[Profile Management]({{<ref "profiles">}})** - Creating and managing print profiles
-- **[Machine Configuration]({{<ref "machine-configuration">}})** - Detailed machine settings and hardware configuration
+**New to NanoDLP?** Start here for a guided introduction:
+- **[Getting Started]({{<ref "/start">}})** - Installation and first-time setup
+- **[First Print]({{<ref "/start/first_print">}})** - Complete your first successful print
+- **[Basic Configuration]({{<ref "settings">}})** - Essential settings to get you printing
 
-## Core Features
+## Essential Workflows
 
-- **[Web Interface]({{<ref "web-interface">}})** - Complete web interface guide and API documentation
-- **[Advanced Slicing]({{<ref "advanced-slicing">}})** - Advanced slicing features and optimization
-- **[Web-Based Slicing (WASM)]({{<ref "web-based-slicing">}})** - Browser-based slicing using WebAssembly
-- **[Hardware Management]({{<ref "hardware-management">}})** - Hardware control, debugging, and monitoring
-- **[API Reference]({{<ref "api-reference">}})** - Complete REST API documentation
+### Setting Up Your Printer
+1. **[Hardware Setup]({{<ref "hardware">}})** - Connect and configure your hardware
+2. **[Machine Configuration]({{<ref "machine-configuration">}})** - Set up printer dimensions and calibration
+3. **[Display Calibration]({{<ref "display-calibration">}})** - Ensure accurate layer display
+4. **[Profile Management]({{<ref "profiles">}})** - Configure resin-specific settings
 
-## Job and Print Management
-
-- **[Job Management]({{<ref "job-management">}})** - Complete job lifecycle management
-- **[USB File Management]({{<ref "usb-file-management">}})** - Managing files from USB devices
-- **[Job Control]({{<ref "job">}})** - Basic job control operations
-- **[Calibration Jobs]({{<ref "calibration-job">}})** - Calibration and testing procedures
-
-## Print Quality and Optimization
-
-- **[Print Quality]({{<ref "print-quality">}})** - Achieving optimal print quality
-- **[Elephant Foot Mitigation]({{<ref "elephant-foot">}})** - Advanced elephant foot prevention
-- **[Dimming]({{<ref "dimming">}})** - Light dimming and exposure control
-- **[Erode]({{<ref "erode">}})** - Material reduction and hollowing
-- **[Hollowing]({{<ref "hollowing">}})** - Creating internal cavities
-- **[Multi-cure]({{<ref "multicure">}})** - Multiple curing passes for quality
-- **[Anti-aliasing]({{<ref "aa-3d">}})** - Edge smoothing and quality enhancement
+### Creating and Managing Prints
+1. **[Web Interface]({{<ref "web-interface">}})** - Navigate the main interface
+2. **[Job Management]({{<ref "job-management">}})** - Upload models and manage print jobs
+3. **[Web-Based Slicing]({{<ref "web-based-slicing">}})** - Slice models directly in your browser
+4. **[Print Monitoring]({{<ref "analytics-monitoring">}})** - Track progress and quality
 
 ## Advanced Features
 
-- **[Adaptive Thickness]({{<ref "adaptive-thickness">}})** - Dynamic layer thickness adjustment
-- **[Barrel Distortion]({{<ref "barrel">}})** - Lens distortion correction
-- **[Direct Control]({{<ref "direct">}})** - Direct hardware control features
-- **[Mask Operations]({{<ref "mask">}})** - Advanced masking and support features
-- **[PCB Support]({{<ref "pcb">}})** - Printed circuit board printing
-- **[Remote Slicing]({{<ref "remote-slicing">}})** - External slicing service integration
+### Print Quality Optimization
+- **[Advanced Slicing]({{<ref "advanced-slicing">}})** - Fine-tune slicing for optimal results
+- **[Elephant Foot Mitigation]({{<ref "elephant-foot">}})** - Prevent base layer expansion
+- **[Anti-Aliasing]({{<ref "aa-3d">}})** - Smooth edges and improve surface quality
+- **[Adaptive Thickness]({{<ref "adaptive-thickness">}})** - Dynamic layer optimization
 
-## Hardware and Display
+### Material and Support Management
+- **[Hollowing & Erode]({{<ref "hollowing">}})** - Reduce material usage and create cavities
+- **[Support Structures]({{<ref "mask">}})** - Configure supports for complex models
+- **[Multi-Cure]({{<ref "multicure">}})** - Enhanced curing for difficult materials
 
-- **[Display Engine]({{<ref "display-engine">}})** - Display system configuration
-- **[Display Calibration]({{<ref "display-calibration">}})** - Calibrating your display system
-- **[Shield Integration]({{<ref "shield">}})** - Shield board configuration and control
-- **[Serial Terminal]({{<ref "serial-terminal">}})** - Direct G-code communication and printer control
+### Hardware Control
+- **[Hardware Management]({{<ref "hardware-management">}})** - Monitor and control printer components
+- **[Serial Terminal]({{<ref "serial-terminal">}})** - Direct G-code communication
+- **[Shield Integration]({{<ref "shield">}})** - Advanced control board features
 
-## Analysis and Monitoring
+## Common Tasks
 
-- **[Analytics & Monitoring]({{<ref "analytics-monitoring">}})** - System monitoring and analytics
-- **[Quality Assurance]({{<ref "quality-assurance">}})** - Quality assurance and control
-- **[Analytics]({{<ref "analytic">}})** - Print analytics and performance monitoring
-- **[Speed Optimization]({{<ref "speed">}})** - Print speed optimization techniques
-- **[Format Support]({{<ref "format">}})** - Supported file formats and conversion
+### Daily Operations
+- **Upload a Model**: Add new 3D models to your print queue
+- **Configure a Profile**: Set up resin-specific settings for optimal results
+- **Start a Print**: Begin printing with proper settings
+- **Monitor Progress**: Track print status and quality
+- **Handle Issues**: Troubleshoot common problems
 
-## Security and Access Control
+### Quality Control
+- **Calibrate Display**: Ensure accurate layer dimensions
+- **Test Print Quality**: Verify settings with calibration models
+- **Optimize Settings**: Fine-tune parameters for your specific needs
+- **Monitor Analytics**: Track performance and identify improvements
 
-- **[Authentication & Security]({{<ref "authentication-security">}})** - User authentication and security
-- **[Network Security & Monitoring]({{<ref "network-security-monitoring">}})** - Network security and monitoring
-- **[Code and G-code]({{<ref "code">}})** - Custom G-code and automation
-- **[Object Deformation]({{<ref "object-deformation">}})** - Advanced object manipulation
+### Advanced Operations
+- **Batch Printing**: Manage multiple jobs efficiently
+- **Remote Monitoring**: Monitor prints from anywhere
+- **Custom G-code**: Add specialized operations
+- **API Integration**: Connect with external systems
 
-## Quick Reference
+## Troubleshooting
 
-### Essential Settings
-- **Profile Management**: Configure resin-specific settings
-- **Machine Configuration**: Set up hardware parameters
-- **Display Calibration**: Ensure accurate printing
-- **Web Interface**: Access all features remotely
+- **[Troubleshooting Guide]({{<ref "/guide/troubleshoot">}})** - Common problems and solutions
+- **[Hardware Issues]({{<ref "hardware">}})** - Diagnose and fix hardware problems
+- **[Print Quality Issues]({{<ref "print-quality">}})** - Resolve quality problems
+- **[System Problems]({{<ref "settings">}})** - Fix configuration and system issues
 
-### Common Tasks
-- **Upload Models**: Add 3D models for printing
-- **Configure Profiles**: Set up resin profiles
-- **Start Printing**: Begin print operations
-- **Monitor Progress**: Track print status
-- **Quality Control**: Monitor print quality
+## Reference Materials
 
-### Troubleshooting
-- **Hardware Issues**: Diagnose hardware problems
-- **Print Quality**: Resolve quality issues
-- **System Problems**: Fix system issues
-- **Network Issues**: Resolve connectivity problems
+### Technical Documentation
+- **[API Reference]({{<ref "api-reference">}})** - Complete REST API documentation
+- **[G-code Reference]({{<ref "code">}})** - Custom code and automation
+- **[File Formats]({{<ref "format">}})** - Supported file types and conversion
+
+### Configuration Reference
+- **[Settings Reference]({{<ref "settings">}})** - Complete configuration options
+- **[Profile Settings]({{<ref "profiles">}})** - Detailed profile parameters
+- **[Hardware Configuration]({{<ref "hardware-management">}})** - Hardware setup details
 
 ## Support and Resources
 
-For additional support and resources:
-- Check the troubleshooting guides
-- Review hardware setup documentation
-- Consult the advanced configuration guides
-- Use the built-in help system
+- **Built-in Help**: Use the help system within NanoDLP
+- **Community Support**: Connect with other users
+- **Hardware Support**: Get help with specific hardware
+- **Update Guide**: Keep your system current
 
 ## Version Information
 

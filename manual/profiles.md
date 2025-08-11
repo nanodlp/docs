@@ -12,212 +12,275 @@ toc: true
 
 ## Overview
 
-NanoDLP profiles allow you to create and manage different print configurations for various resins and materials. Each profile contains settings that can override machine-level configurations and are optimized for specific printing scenarios.
+NanoDLP profiles allow you to create and manage different print configurations for various resins and materials. Each profile contains settings that can override machine-level configurations and are optimized for specific printing scenarios. This guide focuses on practical profile creation and management rather than just listing parameters.
 
-## Profile Types
+## Why Profiles Matter
 
-### Resin Profiles
-Standard profiles for UV-curable resins with customizable exposure and movement parameters.
+Profiles are essential because:
+- **Different resins need different settings** for optimal results
+- **Consistent quality** across multiple prints
+- **Time savings** from not reconfiguring settings
+- **Material optimization** for cost and quality
+- **Team collaboration** with shared configurations
 
-### Wash Profiles
-Specialized profiles for cleaning and post-processing operations.
+## Creating Your First Profile
 
-## Basic Profile Settings
+### Step 1: Start with a Base Profile
+1. Go to **Profiles** in the main menu
+2. Click **Add Profile** or duplicate an existing profile
+3. Give it a descriptive name (e.g., "Standard Resin - 0.05mm")
+4. Choose a distinctive color for easy identification
 
-### General Information
-- **Title**: Descriptive name for the profile
-- **Description**: Detailed description of the profile's purpose
-- **Color**: Visual color representation for easy identification
-- **Resin Price**: Cost tracking for material management
-- **Optimum Temperature**: Recommended operating temperature for the resin
+### Step 2: Configure Essential Settings
+Start with these critical parameters that affect print quality:
 
-### Support Configuration
-- **Support Top Wait**: Wait time after support layer completion
-- **Support Wait Height**: Height at which support wait begins
-- **Support Depth**: Depth of support structures
-- **Support Wait Before/After Print**: Timing controls for support operations
-- **Support Layer Number**: Number of layers to apply support settings
+#### Basic Print Settings
+- **Cure Time**: Start with 8-12 seconds for standard resins
+- **Lift Speed**: 60-100 mm/min for most printers
+- **Retract Speed**: 150-300 mm/min for faster printing
+- **Z Step Wait**: 0.5-1 second between movements
 
-## User-Defined Settings
+#### Support Settings
+- **Support Cure Time**: Usually 1.5-2x normal cure time
+- **Support Top Wait**: 2-5 seconds for proper adhesion
+- **Support Wait Height**: 1-2 mm above the build platform
 
-### Movement Parameters
-- **Z Step Wait**: Z-axis movement speed control
-- **Lift Speed**: Speed of platform lifting between layers
-- **Retract Speed**: Speed of platform lowering to next layer
+### Step 3: Test and Refine
+1. Print a small calibration model
+2. Check layer adhesion and surface quality
+3. Adjust cure time if layers don't stick properly
+4. Fine-tune speeds if you experience issues
 
-### Timing Controls
-- **Top Wait**: Wait time at the top of each layer
-- **Wait Height**: Height at which wait operations begin
-- **Cure Time**: Exposure duration for each layer
-- **Wait Before/After Print**: Pre and post-print timing
+## Profile Types and Use Cases
 
-### Support-Specific Settings
-- **Support Cure Time**: Special exposure time for support layers
-- **Support Layer Number**: Number of layers to apply support settings
+### Standard Resin Profiles
+**Best for**: General-purpose printing, prototypes, functional parts
 
-## Code Options
+**Typical Settings**:
+- **Cure Time**: 8-12 seconds
+- **Lift Speed**: 80 mm/min
+- **Layer Height**: 0.05-0.1 mm
+- **Support Settings**: Standard support configuration
 
-### Dynamic Controls
-- **Dynamic Cure Time**: Custom G-code for variable exposure times
-- **Dynamic Speed**: Custom G-code for variable movement speeds
-- **Dynamic Retract Speed**: Custom G-code for variable retraction speeds
+**When to Use**:
+- First-time setup
+- General prototyping
+- Learning and experimentation
+- Most standard resins
 
-### Shield Integration
-- **Shield Before Layer**: G-code executed before layer display
-- **Shield After Layer**: G-code executed after layer display
-- **Shield During Cure**: G-code executed during curing process
-- **Shield Start**: G-code for shield initialization
-- **Shield Resume**: G-code for shield resumption
-- **Shield Finish**: G-code for shield completion
+### High-Detail Profiles
+**Best for**: Miniatures, detailed models, display pieces
 
-### Specialized Controls
-- **Laser Code**: Custom G-code for laser-based printers
-- **Shutter Open/Close Gcode**: G-code for mechanical shutter control
+**Typical Settings**:
+- **Cure Time**: 10-15 seconds
+- **Lift Speed**: 60 mm/min
+- **Layer Height**: 0.025-0.05 mm
+- **Anti-Aliasing**: Enabled
+- **Multi-Cure**: 2-3 passes
 
-## Detection and Safety
+**When to Use**:
+- High-detail requirements
+- Small, intricate models
+- Display-quality prints
+- Professional applications
 
-### Detection Systems
-- **Separation Detection**: Layer separation monitoring
-- **Resin Level Detection**: Material level monitoring
-- **Auto Level Detection**: Automatic leveling system
-- **Crash Detection**: Collision detection and prevention
-- **Dynamic Wait**: Adaptive wait timing based on conditions
+### Fast Production Profiles
+**Best for**: Batch printing, rapid prototyping, functional testing
 
-## Advanced Slicing Options
+**Typical Settings**:
+- **Cure Time**: 6-8 seconds
+- **Lift Speed**: 100-150 mm/min
+- **Layer Height**: 0.075-0.1 mm
+- **Anti-Aliasing**: Disabled (for speed)
+- **Multi-Cure**: 1-2 passes
 
-### Adaptive Features
-- **Adapt Slicing**: Enable adaptive layer thickness
-- **Adapt Slicing Min/Max**: Layer thickness boundaries
-- **Support Offset**: Support structure positioning
-- **Offset**: General positioning adjustments
+**When to Use**:
+- Quick iterations
+- Functional testing
+- Batch production
+- Time-sensitive projects
 
-### Erode Configuration
-- **Erode Start Mode**: When to begin erode operations
-  - 0: Immediate after support
-  - 1: After X layers
-  - 2: After Z mm height
-- **Erode Start Layer**: Specific layer number for erode start
-- **Erode Start Height**: Z-height for erode initiation
+### Specialty Material Profiles
+**Best for**: Flexible resins, high-temperature materials, specialty applications
 
-### Visual Enhancements
-- **Fill Color**: Color for filled areas
-- **Blank Color**: Color for blank/empty areas
-- **Dim Amount**: Dimming intensity
-- **Dim Wall**: Wall dimming settings
-- **Dim Border**: Border dimming configuration
-- **Dim Skip**: Skip patterns for dimming
-- **Pixel Diming**: Per-pixel dimming control
+**Typical Settings**:
+- **Cure Time**: 15-25 seconds (material-dependent)
+- **Lift Speed**: 40-60 mm/min (slower for delicate materials)
+- **Layer Height**: 0.05-0.075 mm
+- **Multi-Cure**: 3-4 passes
+- **Special handling**: May need custom G-code
 
-### Hatching and Patterns
-- **Hatching Type**: Pattern type for hatching
-- **Hatching Wall**: Wall thickness for hatching
-- **Hatching Gap**: Gap between hatching lines
-- **Hatching Outer Wall**: Outer wall hatching settings
-- **Hatching Top/Bottom Cap**: Top and bottom layer patterns
-- **Hatching Border**: Border hatching configuration
-- **Hatching Space**: Spacing between hatching elements
-- **Hatching Outer**: Outer area hatching settings
+**When to Use**:
+- Flexible or specialty resins
+- High-temperature applications
+- Medical or food-safe materials
+- Experimental materials
 
-### Quality Improvements
-- **Multi Cure Gap**: Gap for multi-cure operations
-- **Anti-Alias Threshold**: Anti-aliasing sensitivity
-- **Anti-Alias**: Standard anti-aliasing control
-- **Anti-Alias 3D**: 3D anti-aliasing settings
-- **Image Rotate**: Image rotation control
-- **Ignore Mask**: Mask ignoring options
+## Essential Profile Settings Explained
 
-## Resolution and Scaling
+### Cure Time: The Foundation
+**What it does**: Controls how long each layer is exposed to UV light
 
-### Resolution Control
-- **XY Resolution**: X and Y axis resolution
-- **Y Resolution**: Y-axis specific resolution
-- **Z Resolution Percentage**: Z-axis resolution scaling
+**How to set it**:
+- **Start conservative**: Begin with manufacturer recommendations
+- **Test with calibration**: Use a small test print to verify
+- **Adjust based on results**: Increase if layers don't stick, decrease if over-cured
+- **Consider layer height**: Thicker layers may need longer cure times
 
-### Shrinkage Compensation
-- **X Scale**: X-axis scaling for resin shrinkage
-- **Y Scale**: Y-axis scaling for resin shrinkage
-- **Z Scale**: Z-axis scaling for resin shrinkage
+**Common values**:
+- **Fast resins**: 6-8 seconds
+- **Standard resins**: 8-12 seconds
+- **Slow resins**: 12-18 seconds
+- **Specialty resins**: 15-25 seconds
 
-## Advanced Features
+### Movement Settings: Speed and Reliability
+**Lift Speed**: How fast the platform moves up between layers
+- **Too fast**: May cause layer separation
+- **Too slow**: Increases print time unnecessarily
+- **Sweet spot**: 60-100 mm/min for most applications
 
-### Extended EFME (Elephant Foot Mitigation Enhanced)
-- **EFME Mode**: Application mode selection
-  - 0: Burn-in only
-  - 1: All layers
-  - 2: Selected layers
-- **EFME Max Layer**: Maximum layer for EFME application
-- **EFME Continuous**: Continuous timing mode
-- **EFME Guard Band**: Guard band thickness
+**Retract Speed**: How fast the platform moves down to the next layer
+- **Can be faster**: Usually 2-3x lift speed
+- **Consider resin viscosity**: Thicker resins may need slower retraction
 
-### Elephant Foot Mitigation
-- **Elephant Type**: Mitigation method selection
-- **Elephant Amount**: Mitigation intensity
-- **Elephant Wall**: Wall thickness settings
-- **Elephant Border**: Border configuration
-- **Elephant Thickness**: Thickness parameters
-- **Elephant Layers**: Layer count for mitigation
+**Z Step Wait**: Pause between movements
+- **Purpose**: Allows resin to settle and bubbles to escape
+- **Too short**: May cause air bubbles or poor adhesion
+- **Too long**: Unnecessary delays
 
-### Ring Exposure System
-- **Ring Exposure Enabled**: Enable/disable ring exposure
-- **Ring Thickness**: Thickness of exposure ring
-- **Ring Exposure Reduction**: Exposure reduction percentage
-- **Ring Gradient Falloff**: Gradient falloff control
-- **Ring Exposure Mode**: Application mode selection
-- **Ring Max Layer**: Maximum layer for ring exposure
+### Support Configuration: Building Success
+**Support Cure Time**: Exposure time for support structures
+- **Usually longer**: 1.5-2x normal cure time
+- **Purpose**: Ensures supports are strong enough
+- **Too short**: Weak supports may fail
+- **Too long**: Over-cured supports are hard to remove
 
-### Advanced Base Layer
-- **Advanced Base Layer**: Enable/disable advanced base layer
-- **Base Layer Seed Size**: Initial exposure dot size
-- **Base Layer Seed Spacing**: Spacing between seed dots
-- **Base Layer Seed Exposure**: Seed stage exposure time
-- **Base Layer Lattice Exposure**: Lattice stage exposure time
-- **Base Layer Final Exposure**: Final stage exposure time
-- **Base Layer Max Layers**: Maximum layers for advanced base layer
+**Support Wait Height**: When support settings take effect
+- **Start early**: Begin 1-2 mm above the build platform
+- **Consider model**: Complex models may need earlier support
 
-## Direct Control
+## Advanced Profile Features
 
-### Slow Section Control
-- **Slow Section Height**: Height for slow movement sections
-- **Slow Section Step Wait**: Wait time in slow sections
+### Multi-Cure: Enhanced Quality
+**What it does**: Performs multiple curing passes per layer
 
-## Profile Management
+**When to use**:
+- **Quality requirements**: High-detail or professional prints
+- **Difficult materials**: Resins that need extra curing
+- **Complex geometries**: Models with challenging features
 
-### Creating Profiles
-1. Navigate to the Profile Management section
-2. Click "Add New Profile"
-3. Configure basic settings and parameters
-4. Save the profile with a descriptive name
+**Configuration**:
+- **Start with 2 passes**: Most materials benefit from this
+- **Increase if needed**: Up to 4 passes for difficult materials
+- **Monitor time**: Each pass adds time per layer
 
-### Editing Profiles
-1. Select the profile to edit
-2. Modify desired parameters
-3. Save changes (note: some changes require plate regeneration)
+### Anti-Aliasing: Smooth Surfaces
+**What it does**: Smooths edges and reduces stair-stepping
 
-### Profile Organization
-- Use descriptive names and descriptions
-- Group profiles by resin type or application
-- Maintain consistent naming conventions
-- Document special settings or requirements
+**When to use**:
+- **Curved surfaces**: Models with lots of curves
+- **High quality**: When surface finish matters
+- **Display models**: Parts that will be visible
 
-## Best Practices
+**Configuration**:
+- **Enable for quality**: Set to 1 for smooth surfaces
+- **Adjust threshold**: Lower values = smoother but slower
+- **Test first**: Verify quality improvement vs. time cost
 
-### Profile Optimization
-- Start with manufacturer-recommended settings
-- Test with small calibration prints
-- Document successful configurations
-- Use profiles for different resin batches
+### Adaptive Slicing: Smart Layer Thickness
+**What it does**: Automatically adjusts layer thickness based on geometry
 
-### Safety Considerations
-- Always test new profiles with small prints
-- Monitor print quality and adhesion
-- Adjust exposure times gradually
-- Keep backup profiles for known good settings
+**When to use**:
+- **Mixed complexity**: Models with both simple and complex areas
+- **Time optimization**: Faster printing of simple areas
+- **Quality optimization**: Better detail in complex areas
+
+**Configuration**:
+- **Enable**: Set Adapt Slicing to 1
+- **Set range**: Min 0.025mm, Max 0.1mm (start conservative)
+- **Test transitions**: Ensure smooth transitions between thicknesses
+
+## Profile Management Best Practices
+
+### Organization Strategy
+1. **Use descriptive names**: Include resin type, layer height, and purpose
+2. **Color coding**: Assign colors for quick visual identification
+3. **Group by material**: Organize profiles by resin type
+4. **Version control**: Keep track of successful configurations
+
+### Testing and Validation
+1. **Start small**: Test new profiles with calibration models
+2. **Document results**: Keep notes on what works and what doesn't
+3. **Iterate gradually**: Make small changes and test each one
+4. **Validate with real models**: Test with your actual use cases
+
+### Maintenance and Updates
+1. **Regular review**: Periodically review and update profiles
+2. **Material changes**: Update profiles when switching resins
+3. **Seasonal adjustments**: Consider temperature and humidity changes
+4. **Backup profiles**: Export and backup successful configurations
+
+## Troubleshooting Profile Issues
+
+### Common Problems and Solutions
+
+#### Poor Layer Adhesion
+**Symptoms**: Layers separating, weak prints
+**Solutions**:
+- Increase cure time by 1-2 seconds
+- Check resin temperature (should be 20-25°C)
+- Verify layer height isn't too thick
+- Ensure proper support configuration
+
+#### Over-Curing
+**Symptoms**: Brittle prints, rough surfaces, hard to remove supports
+**Solutions**:
+- Decrease cure time by 1-2 seconds
+- Reduce multi-cure passes
+- Check UV light intensity
+- Verify resin isn't expired
+
+#### Print Failures
+**Symptoms**: Complete print failures, stuck to FEP
+**Solutions**:
+- Check lift speed (may be too fast)
+- Verify Z step wait (may be too short)
+- Ensure proper support configuration
+- Check resin level and viscosity
+
+#### Slow Printing
+**Symptoms**: Unnecessarily long print times
+**Solutions**:
+- Increase lift and retract speeds
+- Reduce Z step wait time
+- Optimize layer height
+- Consider adaptive slicing
+
+## Profile Templates and Sharing
+
+### Creating Templates
+1. **Start with a working profile**: Use a profile that works well
+2. **Remove specific settings**: Clear resin-specific parameters
+3. **Add documentation**: Include usage notes and recommendations
+4. **Test thoroughly**: Verify template works with different materials
+
+### Sharing Profiles
+1. **Export profiles**: Use NanoDLP's export functionality
+2. **Document settings**: Include material recommendations
+3. **Share best practices**: Include tips for successful use
+4. **Version control**: Keep track of profile versions
+
+## Next Steps
+
+Once you're comfortable with profile management:
+- **[Advanced Slicing]({{<ref "advanced-slicing">}})** - Fine-tune slicing for optimal results
+- **[Machine Configuration]({{<ref "machine-configuration">}})** - Optimize hardware settings
+- **[Print Quality]({{<ref "print-quality">}})** - Monitor and improve results
+- **[Job Management]({{<ref "job-management">}})** - Efficiently manage multiple prints
 
 ## Related Topics
 
-- [Machine Configuration]({{<ref "settings">}})
-- [Print Quality]({{<ref "print-quality">}})
-- [Elephant Foot Mitigation]({{<ref "elephant-foot">}})
-- [Dimming]({{<ref "dimming">}})
-- [Erode]({{<ref "erode">}})
-- [Hollowing]({{<ref "hollowing">}})
+- [Advanced Slicing]({{<ref "advanced-slicing">}}) - Fine-tune slicing parameters
+- [Machine Configuration]({{<ref "machine-configuration">}}) - Hardware setup and calibration
+- [Print Quality]({{<ref "print-quality">}}) - Monitor and improve results
+- [Job Management]({{<ref "job-management">}}) - Manage print jobs efficiently
