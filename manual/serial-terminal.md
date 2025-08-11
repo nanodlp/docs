@@ -153,3 +153,4 @@ The NanoDLP Serial Terminal provides direct communication with your 3D printer's
 ### Integration
 - **API Access**: Programmatic terminal access
 - **Logging**: Comprehensive command and response logging
+
